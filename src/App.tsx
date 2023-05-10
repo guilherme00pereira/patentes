@@ -1,20 +1,32 @@
-import { Container, Header, Content, Footer, Sidebar } from 'rsuite';
-import './App.css'
+import 'rsuite/dist/rsuite.min.css';
+import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import Layout from "./routes/Layout.tsx";
+import BrandSearch from "./routes/BrandSearch.tsx";
+import ProcessFollowUp from "./routes/ProcessFollowUp.tsx";
 
-function App() {
+const router = createBrowserRouter([
+  {
+    path: "/",
+    Component: Layout,
+    children: [
+      {
+        path: "",
+        element: <BrandSearch />,
+      },
+      {
+        path: "acompanhamento-de-processos",
+        element: <ProcessFollowUp />,
+      },
+      ]
+  }
+])
 
+export default function App() {
   return (
-    <div>
-        <Container>
-            <Sidebar>Sidebar</Sidebar>
-            <Container>
-                <Header>Header</Header>
-                <Content>Content</Content>
-                <Footer>Footer</Footer>
-            </Container>
-        </Container>
-    </div>
+    <RouterProvider router={router} fallbackElement={<Fallback />} />
   )
 }
 
-export default App
+export function Fallback() {
+  return <p>Performing initial data load</p>;
+}
