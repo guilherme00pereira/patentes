@@ -1,28 +1,40 @@
-import { Sidenav, Nav } from "rsuite";
+import type { MenuProps } from "antd";
+import { Menu, Button } from "antd";
 import {useState} from "react";
 import { HiMagnifyingGlass, HiOutlineDocument } from "react-icons/hi2";
 import { Link } from "react-router-dom";
 
+const items: MenuProps['items'] = [
+  {
+    label: <Link to='/'>Busca de Marcas</Link>,
+    key: 'bm',
+    icon: <HiMagnifyingGlass />,
+  },
+  {
+    label: <Link to="acompanhamento-de-processos">Acompanhamento de Processos</Link>,
+    key: 'ap',
+    icon: <HiOutlineDocument />,
+    disabled: true,
+  },
+];
+
 const SidebarMenu = () => {
-  const [expanded, setExpanded] = useState(true);
-  const [activeKey, setActiveKey] = useState("1");
+  const [collapsed, setCollapsed] = useState(false);
+
+  const toggleCollapsed = () => {
+    setCollapsed(!collapsed);
+  };
 
   return (
-    <div>
-      <Sidenav expanded={expanded}>
-        <Sidenav.Body>
-          <Nav activeKey={activeKey} onSelect={setActiveKey}>
-            <Nav.Item eventKey="1" icon={<HiMagnifyingGlass />}>
-              <Link to='/'>Busca de Marcas</Link>
-            </Nav.Item>
-            <Nav.Item eventKey="2" icon={<HiOutlineDocument />}>
-                <Link to="acompanhamento-de-processos">Acompanhamento de Processos</Link>
-            </Nav.Item>
-          </Nav>
-        </Sidenav.Body>
-        <Sidenav.Toggle onToggle={expanded => setExpanded(expanded)} />
-      </Sidenav>
-    </div>
+    
+      <Menu
+        defaultSelectedKeys={['bm']}
+        mode="inline"
+        theme="dark"
+        inlineCollapsed={collapsed}
+        items={items}
+      />
+    
   );
 };
 

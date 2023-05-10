@@ -3,7 +3,7 @@ interface TitleProps {
 }
 const PageTitle = ({title}: TitleProps) => {
   return (
-    <div className="">
+    <div style={{fontSize: "2.5em"}}>
       <h1>{title}</h1>
     </div>
   );
