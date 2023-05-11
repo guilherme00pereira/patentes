@@ -8,13 +8,14 @@ const BrandSearch = () => {
     const [renderTable, setRenderTable] = useState(true);
     const [loading, setLoading] = useState(false);
 
+    const renderSection = () => renderTable ? <BrandTable/> : <div>Relatório</div>
+
     return (
         <BrandContext.Provider value={{setRenderTable, setLoading}}>
             <div className="main-container">
                 <PageTitle title="Busca de Marcas"/>
                 <BrandSearchMenu/>
-                {renderTable && <BrandTable/>}
-                {renderTable || <div>Relatório</div>}
+                {loading ? <div>Carregando...</div> : renderSection()}
             </div>
         </BrandContext.Provider>
     );
