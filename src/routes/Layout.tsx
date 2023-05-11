@@ -1,8 +1,8 @@
 import { useState } from "react";
-import { Layout as Container, Space, Menu } from "antd";
+import { Layout as Container, Menu } from "antd";
 import type { MenuProps } from "antd";
 import { Outlet } from "react-router-dom";
-import { HiMagnifyingGlass, HiOutlineDocument } from "react-icons/hi2";
+import { SearchOutlined, FileTextOutlined } from "@ant-design/icons";
 import { Link } from "react-router-dom";
 
 const { Header, Sider, Content, Footer } = Container;
@@ -11,13 +11,12 @@ const items: MenuProps['items'] = [
   {
     label: <Link to='/'>Busca de Marcas</Link>,
     key: 'bm',
-    icon: <HiMagnifyingGlass />,
+    icon: <SearchOutlined />,
   },
   {
     label: <Link to="acompanhamento-de-processos">Acompanhamento de Processos</Link>,
     key: 'ap',
-    icon: <HiOutlineDocument />,
-    disabled: true,
+    icon: <FileTextOutlined />,
   },
 ];
 
@@ -27,6 +26,7 @@ const Layout = () => {
   return (
       <Container style={{ minHeight: '100vh' }}>
         <Sider collapsible collapsed={collapsed} onCollapse={(value) => setCollapsed(value)}>
+          <div style={{ height: 32, margin: 16, background: 'rgba(255, 255, 255, 0.2)' }} />
           <Menu
             defaultSelectedKeys={['bm']}
             mode="inline"
