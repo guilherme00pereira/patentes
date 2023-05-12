@@ -1,8 +1,9 @@
 import ClassDropdown from "../form/ClassDropdown.tsx";
 import SituationDropdown from "../form/SituationDropdown.tsx";
 import TextInput from "../form/TextInput.tsx";
-import {Button, Form} from 'antd';
+import {Form} from 'antd';
 import DistanceDropdown from "../form/DistanceDropdown.tsx";
+import SubmitButton from "../form/SubmitButton.tsx";
 
 const DistanceSection = () => {
   return (
@@ -21,7 +22,7 @@ const DistanceSection = () => {
           <SituationDropdown/>
         </Form.Item>
         <Form.Item>
-          <Button type="primary" htmlType="submit">Buscar</Button>
+          <SubmitButton/>
         </Form.Item>
       </Form>
     </div>

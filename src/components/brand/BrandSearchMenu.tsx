@@ -5,6 +5,8 @@ import RadicalSection from "./sections/RadicalSection.tsx";
 import DistanceSection from "./sections/DistanceSection.tsx";
 import {useContext} from "react";
 import {BrandContext} from "../../config/context.tsx";
+import initCollapseMotion from 'antd/es/_util/motion';
+import { initialBrandSearchData } from '../../config/data.ts';
 
 const items: TabsProps['items'] = [
   {
@@ -35,7 +37,7 @@ const items: TabsProps['items'] = [
 ];
 
 const BrandSearchMenu = () => {
-  const {setRenderTable} = useContext(BrandContext);
+  const {setRenderTable, setData} = useContext(BrandContext);
 
   const onChange = (activeKey: string) => {
     if (activeKey === '4' || activeKey === '5') {
@@ -43,11 +45,12 @@ const BrandSearchMenu = () => {
     } else {
       setRenderTable(true);
     }
+    setData(initialBrandSearchData)
   }
 
   return (
     <div>
-      <Tabs defaultActiveKey="1" items={items} onChange={onChange}/>
+      <Tabs defaultActiveKey="1" items={items} onChange={onChange} centered/>
     </div>
   );
 };

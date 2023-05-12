@@ -1,34 +1,27 @@
-import { Select } from "antd";
-import type { SelectProps } from 'antd';
-
-const options: SelectProps['options'] = [
-    { value: '0', label: 'Todos' },
-]
-
-for (let i = 1; i <= 45; i++) {
-    options.push({
-      label: i,
-      value: i,
-    });
-  }
-
-  const handleChange = (value: string[]) => {
-    console.log(`selected ${value}`);
-  };
+import { Select } from 'antd'
+import { useContext } from 'react'
+import { BrandContext } from '../../../config/context.tsx'
+import { selectClassOptions } from '../../../config/data.ts'
 
 const ClassDropdown = () => {
-    return (
-        <div>
-            <Select
-            mode="multiple"
-            allowClear
-            style={{ width: '200px' }}
-            placeholder="selecionar classes"
-            onChange={handleChange}
-            options={options}
-            />
-        </div>
-    );
-};
+  const { data, setData } = useContext(BrandContext)
 
-export default ClassDropdown;
+  const handleChange = (value: string[]) => {
+    setData({ ...data, class: value  })
+  }
+
+  return (
+    <div>
+      <Select
+        mode="multiple"
+        allowClear
+        style={{ width: '200px' }}
+        placeholder="selecionar classes"
+        onChange={handleChange}
+        options={selectClassOptions()}
+      />
+    </div>
+  )
+}
+
+export default ClassDropdown

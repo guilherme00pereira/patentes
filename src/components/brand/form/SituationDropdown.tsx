@@ -1,17 +1,15 @@
 import { Select } from "antd";
-import type { SelectProps } from 'antd';
-
-const options: SelectProps['options'] = [
-    { value: 'td', label: 'Todos' },
-    { value: 'pa', label: 'Pedidos Ativos' },
-    { value: 'pe', label: 'Pedidos Extintos/Arquivados' },
-]
-
-const handleChange = (value: string[]) => {
-    console.log(`selected ${value}`);
-  };
+import { useContext } from 'react'
+import { BrandContext } from '../../../config/context.tsx'
+import { selectOptions } from '../../../config/data.ts'
 
 const SituationDropdown = () => {
+    const { data, setData } = useContext(BrandContext)
+
+    const handleChange = (value: string) => {
+        setData({ ...data, situation: value  })
+      }
+
     return (
         <div>
             <Select
@@ -19,7 +17,7 @@ const SituationDropdown = () => {
             style={{ width: '200px' }}
             placeholder="selecionar situação"
             onChange={handleChange}
-            options={options}
+            options={selectOptions}
             />
         </div>
     );
