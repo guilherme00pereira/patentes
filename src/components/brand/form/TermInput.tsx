@@ -1,18 +1,23 @@
-import {useState} from 'react';
-import { Input } from 'antd';
-import {useContext} from "react";
-import {BrandContext} from "../../../config/context.tsx";
+import { ConfigProvider, Input, Form } from 'antd'
 
-const TermInput = () => {
-    const {data, setData} = useContext(BrandContext);
-    const [text, setText] = useState('');
+const TermInput = ({placeholder}: {placeholder: string}) => {
+  const form = Form.useFormInstance()
 
-    const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
-        setText(e.target.value);
-        setData({...data, term: e.target.value});
-    }
+  const onChangeHandler = (e: React.ChangeEvent<HTMLInputElement>) => {
+    form.setFieldsValue({ termo: e.target.value })
 
-    return <Input placeholder="Termo" style={{width: "300px"}} value={text} onChange={onChangeHandler} />
-};
+  }
 
-export default TermInput;
+  return (
+    <ConfigProvider theme={{ token: { colorPrimary: '#080C66' } }}>
+      <Input
+        placeholder={placeholder}
+        size="large"
+        style={{ width: '300px' }}
+        onChange={onChangeHandler}
+      />
+    </ConfigProvider>
+  )
+}
+
+export default TermInput

@@ -1,10 +1,14 @@
 import React, { useState } from 'react'
 import { Input, Form, Modal, Button, ConfigProvider, Typography } from 'antd'
-import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import { faTrashCan } from "@fortawesome/free-regular-svg-icons";
-import { faFileCirclePlus } from "@fortawesome/free-solid-svg-icons";
+import { MdOutlineDeleteForever, MdPlaylistAdd } from 'react-icons/md'
+import { ButtonProps } from 'antd/es/button/button'
 
 const { Title } = Typography
+
+const okButtonProps: ButtonProps = {
+  icon: <MdOutlineDeleteForever />,
+  style: { direction: 'rtl', boxShadow: 'none', margin: '0px 10px' },
+}
 
 const IncludeProcess = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
@@ -39,9 +43,10 @@ const IncludeProcess = () => {
           <Form.Item name="incexcprocess" label="Incluir/Excluir processo" colon={false}>
             <Input
               value={processNumber}
+              size="large"
               onChange={handleInputChange}
-              placeholder="Insira o numero do processo"
-              style={{ width: '300px', height: '40px' }}
+              placeholder="Insira o número do processo"
+              style={{ width: '300px' }}
             />
           </Form.Item>
         </Form>
@@ -51,10 +56,10 @@ const IncludeProcess = () => {
           <Button
             type="primary"
             size="large"
-            icon={<FontAwesomeIcon icon={faTrashCan} />}
+            icon={<MdOutlineDeleteForever />}
             onClick={showModal}
             className="iconic-button"
-            style={{ width: '180px' }}
+            style={{ width: '200px' }}
           >
             Excluir Processo
           </Button>
@@ -63,24 +68,29 @@ const IncludeProcess = () => {
           <Button
             type="primary"
             size="large"
-            icon={<FontAwesomeIcon icon={faFileCirclePlus} />}
+            icon={<MdPlaylistAdd />}
             onClick={handleIncludeProcess}
             className="iconic-button"
-            style={{ width: '180px' }}
+            style={{ width: '200px' }}
           >
             Incluir Processo
           </Button>
         </ConfigProvider>
       </div>
-      <Modal title="Basic Modal" open={isModalOpen} onOk={handleOk} onCancel={handleCancel}>
-        <div className="modal-wrapper">
+      <ConfigProvider theme={{ token: { colorPrimary: '#DC3545' } }}>
+        <Modal
+          title="Basic Modal"
+          open={isModalOpen}
+          onOk={handleOk}
+          onCancel={handleCancel}
+          okButtonProps={okButtonProps}
+        >
+          <div className="modal-wrapper">
             <Title level={4}>Deseja excluir o processo {processNumber}?</Title>
-          <p>Apos a exclusao nao sera possivel recuperar estes dados.</p>
-          <div>
-
+            <p>Após a exclusão não será possível recuperar estes dados.</p>
           </div>
-        </div>
-      </Modal>
+        </Modal>
+      </ConfigProvider>
     </div>
   )
 }

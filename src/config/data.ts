@@ -20,13 +20,6 @@ export const selectClassOptions = () => {
   return createSelectClassOptions
 }
 
-export const initialBrandSearchData: BrandSearch = {
-  term: '',
-  class: [],
-  situation: '',
-  distance: 0,
-}
-
 interface DataType {
   key: string
   class: string

@@ -2,8 +2,7 @@ import {useEffect, useState} from 'react'
 import { Layout } from 'antd'
 import { siderTheme } from '../config/theme.ts'
 import { ConfigProvider, Menu } from 'antd'
-import { FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import { faMagnifyingGlass, faFileLines, faArrowRightFromBracket } from "@fortawesome/free-solid-svg-icons";
+import { MdOutlineSearch, MdOutlineDescription, MdOutlineLogout } from 'react-icons/md'
 import { Link, useLocation } from 'react-router-dom'
 
 const { Sider } = Layout
@@ -37,14 +36,14 @@ const Sidebar = () => {
           <Menu selectedKeys={[selectedKey]} mode="inline" theme="dark" inlineCollapsed={collapsed}>
             <Menu.Item
               key="bm"
-              icon={<FontAwesomeIcon icon={faMagnifyingGlass} />}
+              icon={<MdOutlineSearch/>}
               style={{ margin: '32px 0', height: '40px' }}
             >
               <Link to="/">Busca de Marcas</Link>
             </Menu.Item>
             <Menu.Item
               key="ap"
-              icon={<FontAwesomeIcon icon={faFileLines}/>}
+              icon={<MdOutlineDescription/>}
               style={{ margin: '32px 0', height: '40px' }}
             >
               <Link to="acompanhamento-de-processos">Acompanhamento de Processos</Link>
@@ -53,7 +52,7 @@ const Sidebar = () => {
             <Menu theme="dark" mode="inline" inlineCollapsed={collapsed}>
                 <Menu.Item
                     key="lo"
-                    icon={<FontAwesomeIcon icon={faArrowRightFromBracket}/>}
+                    icon={<MdOutlineLogout/>}
                     style={{ margin: '32px 0', height: '40px' }}
                 >
                     <Link to="logout">Sair</Link>

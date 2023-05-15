@@ -3,15 +3,12 @@ import HeaderSection from '../components/HeaderSection.tsx'
 import BrandSearchMenu from '../components/brand/BrandSearchMenu.tsx'
 import BrandTable from '../components/brand/BrandTable.tsx'
 import { BrandContext } from '../config/context.tsx'
-import { BrandSearch } from '../config/types.ts'
-import { initialBrandSearchData } from '../config/data.ts'
 import Loading from '../components/Loading.tsx'
 
 const BrandSearch = () => {
   const [blank, setBlank] = useState(true)
   const [renderTable, setRenderTable] = useState(true)
   const [loading, setLoading] = useState(false)
-  const [data, setData] = useState<BrandSearch>(initialBrandSearchData)
 
   const renderSection = () => {
     if(blank) {
@@ -22,7 +19,7 @@ const BrandSearch = () => {
   }
 
   return (
-    <BrandContext.Provider value={{ setRenderTable, setLoading, data, setData, setBlank }}>
+    <BrandContext.Provider value={{ setRenderTable, setLoading, setBlank }}>
       <div className="main-container">
         <HeaderSection title="Busca de marcas" />
         <BrandSearchMenu />

@@ -9,17 +9,22 @@ const DistanceSection = () => {
   return (
     <div style={{padding: "20px"}}>
       <Form layout="inline">
-        <Form.Item>
-          <TermInput/>
+      <Form.Item
+          name="termo"
+          label="Termo"
+          colon={false}
+          rules={[{ required: true, message: 'Preencha o campo' }]}
+        >
+          <TermInput placeholder="Insira o termo de busca" />
         </Form.Item>
-        <Form.Item>
+        <Form.Item name="distancia">
           <DistanceDropdown/>
         </Form.Item>
-        <Form.Item>
-          <ClassDropdown/>
+        <Form.Item name="classe">
+          <ClassDropdown />
         </Form.Item>
-        <Form.Item>
-          <SituationDropdown/>
+        <Form.Item name="situacao">
+          <SituationDropdown />
         </Form.Item>
         <Form.Item>
           <SearchButton/>

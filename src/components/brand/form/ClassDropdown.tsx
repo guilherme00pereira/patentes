@@ -1,24 +1,26 @@
-import { Select } from 'antd'
-import { useContext } from 'react'
-import { BrandContext } from '../../../config/context.tsx'
+import { ConfigProvider, Select, Form } from 'antd'
 import { selectClassOptions } from '../../../config/data.ts'
+import { selectTheme } from '../../../config/theme.ts'
 
 const ClassDropdown = () => {
-  const { data, setData } = useContext(BrandContext)
+  const form = Form.useFormInstance()
 
   const handleChange = (value: string[]) => {
-    setData({ ...data, class: value  })
+    form.setFieldValue('classe', value)
   }
 
   return (
+    <ConfigProvider theme={selectTheme}>
       <Select
         mode="multiple"
         allowClear
+        size='large'
         style={{ width: '200px' }}
         placeholder="selecionar classes"
         onChange={handleChange}
         options={selectClassOptions()}
       />
+      </ConfigProvider>
   )
 }
 

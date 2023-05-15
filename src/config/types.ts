@@ -1,10 +1,3 @@
-export type BrandSearch = {
-  term: string,
-  class: string[],
-  situation: string,
-  distance?: number 
-}
-
 export type BrandTableData = {
   class: string;
   process: string;

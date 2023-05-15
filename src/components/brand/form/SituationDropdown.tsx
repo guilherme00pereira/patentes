@@ -1,24 +1,26 @@
-import { Select } from "antd";
-import { useContext } from 'react'
-import { BrandContext } from '../../../config/context.tsx'
+import { ConfigProvider, Select, Form } from 'antd'
 import { selectOptions } from '../../../config/data.ts'
+import { selectTheme } from '../../../config/theme.ts'
 
 const SituationDropdown = () => {
-    const { data, setData } = useContext(BrandContext)
+  const form = Form.useFormInstance()
 
-    const handleChange = (value: string) => {
-        setData({ ...data, situation: value  })
-      }
+  const handleChange = (value: string) => {
+    form.setFieldsValue({ situacao: value })
+  }
 
-    return (
-            <Select
-            allowClear
-            style={{ width: '200px' }}
-            placeholder="selecionar situação"
-            onChange={handleChange}
-            options={selectOptions}
-            />
-    );
-};
+  return (
+    <ConfigProvider theme={selectTheme}>
+      <Select
+        allowClear
+        size="large"
+        style={{ width: '200px' }}
+        placeholder="selecionar situação"
+        onChange={handleChange}
+        options={selectOptions}
+      />
+    </ConfigProvider>
+  )
+}
 
-export default SituationDropdown;
+export default SituationDropdown
