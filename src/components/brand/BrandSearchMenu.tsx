@@ -5,7 +5,6 @@ import RadicalSection from "./sections/RadicalSection.tsx";
 import DistanceSection from "./sections/DistanceSection.tsx";
 import {useContext} from "react";
 import {BrandContext} from "../../config/context.tsx";
-import initCollapseMotion from 'antd/es/_util/motion';
 import { initialBrandSearchData } from '../../config/data.ts';
 
 const items: TabsProps['items'] = [
@@ -49,8 +48,8 @@ const BrandSearchMenu = () => {
   }
 
   return (
-    <div>
-      <Tabs defaultActiveKey="1" items={items} onChange={onChange} centered/>
+    <div className="tab-wrapper">
+      <Tabs defaultActiveKey="1" items={items} onChange={onChange} centered tabBarStyle={{color: "#F2843A"}}/>
     </div>
   );
 };

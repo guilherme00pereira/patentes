@@ -11,7 +11,6 @@ const SituationDropdown = () => {
       }
 
     return (
-        <div>
             <Select
             allowClear
             style={{ width: '200px' }}
@@ -19,7 +18,6 @@ const SituationDropdown = () => {
             onChange={handleChange}
             options={selectOptions}
             />
-        </div>
     );
 };
 

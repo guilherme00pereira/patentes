@@ -16,7 +16,6 @@ const handleChange = (value: string[]) => {
 
 const DistanceDropdown = () => {
     return (
-        <div>
             <Select
                 mode="multiple"
                 allowClear
@@ -25,7 +24,6 @@ const DistanceDropdown = () => {
                 onChange={handleChange}
                 options={options}
             />
-        </div>
     );
 };
 

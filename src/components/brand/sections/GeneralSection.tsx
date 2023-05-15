@@ -1,16 +1,16 @@
 import ClassDropdown from "../form/ClassDropdown.tsx";
 import SituationDropdown from "../form/SituationDropdown.tsx";
-import TextInput from "../form/TextInput.tsx";
+import TermInput from "../form/TermInput.tsx";
 import {Form} from 'antd';
-import SubmitButton from "../form/SubmitButton.tsx";
+import SearchButton from "../form/SearchButton.tsx";
 
 const GeneralSection = () => {
 
   return (
     <div style={{padding: "20px"}}>
       <Form layout="inline">
-        <Form.Item>
-          <TextInput/>
+        <Form.Item label="Termo" colon={false}>
+          <TermInput/>
         </Form.Item>
         <Form.Item>
           <ClassDropdown/>
@@ -19,7 +19,7 @@ const GeneralSection = () => {
           <SituationDropdown/>
         </Form.Item>
         <Form.Item>
-          <SubmitButton/>
+          <SearchButton showText/>
         </Form.Item>
       </Form>
     </div>

@@ -11,7 +11,6 @@ const ClassDropdown = () => {
   }
 
   return (
-    <div>
       <Select
         mode="multiple"
         allowClear
@@ -20,7 +19,6 @@ const ClassDropdown = () => {
         onChange={handleChange}
         options={selectClassOptions()}
       />
-    </div>
   )
 }
 

@@ -2,7 +2,7 @@ import {Form} from "antd";
 import ClassDropdown from "../form/ClassDropdown.tsx";
 import SituationDropdown from "../form/SituationDropdown.tsx";
 import MultipleTermsInput from "../form/MultipleTermsInput.tsx";
-import SubmitButton from "../form/SubmitButton.tsx";
+import SearchButton from "../form/SearchButton.tsx";
 
 const RadicalSection = () => {
   return (
@@ -18,7 +18,7 @@ const RadicalSection = () => {
           <SituationDropdown/>
         </Form.Item>
         <Form.Item>
-          <SubmitButton/>
+          <SearchButton/>
         </Form.Item>
       </Form>
     </div>

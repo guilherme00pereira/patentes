@@ -1,12 +1,14 @@
-.logo {
-    margin: 20px 0;
-    height: 32px;
-    margin: 16px;
-    background: rgba(255, 255, 255, 0.2);
+
+.header-section {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    color: white;
+    width: 100%;
+    padding: 0 20px;
+}
+
+.header-section h1 {
+    font-size: 2.5rem;
 }
 
 .main-container {
@@ -14,4 +16,72 @@
     flex-direction: column;
     padding: 20px;
     align-items: center;
+}
+
+.loading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.sidebar-menu {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 100vh;
+}
+
+.iconic-button {
+    direction: rtl;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.ant-btn-primary {
+    box-shadow: 2px 4px 8px 0 #00000040;
+}
+
+.ant-tabs-top >.ant-tabs-nav::before {
+    border-bottom: none;
+}
+
+.table-wrapper {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    margin-top: 20px;
+}
+
+.pretable {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.tab-wrapper {
+    width: 100%;
+}
+
+.include-process {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+.include-process .buttons {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    width: 40%;
+}
+
+.modal-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
 }

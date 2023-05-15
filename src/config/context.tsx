@@ -7,11 +7,13 @@ export const BrandContext = createContext<{
     setLoading: (newValue: boolean) => void,
     data: BrandSearch,
     setData: (newValue: BrandSearch) => void
+    setBlank: (newValue: boolean) => void
 }>({
     setRenderTable: () => undefined,
     setLoading: () => undefined,
     data: initialBrandSearchData,
-    setData: () => undefined
+    setData: () => undefined,
+    setBlank: () => undefined
 })
 
 export const FollowUpContext = createContext<{
