@@ -7,7 +7,7 @@ import SearchButton from "../form/SearchButton.tsx";
 const RadicalSection = () => {
   return (
     <div style={{padding: "20px"}}>
-      <Form layout="inline">
+      <Form layout="inline" style={{alignItems: "end"}}>
           <MultipleTermsInput/>
         <Form.Item name="classe" label="Classe" colon={false}>
           <ClassDropdown />

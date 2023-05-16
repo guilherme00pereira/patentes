@@ -26,8 +26,12 @@ const Sidebar = () => {
         onMouseOver={() => setCollapsed(false)}
         onMouseOut={() => setCollapsed(true)}
         style={{
-          position: 'absolute',
+            overflow: 'auto',
+          position: 'fixed',
           minHeight: '100vh',
+            left: 0,
+            bottom: 0,
+            top: 0,
           zIndex: 1,
           backgroundColor: '#080C66',
         }}

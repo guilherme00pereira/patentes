@@ -8,7 +8,7 @@ import SearchButton from "../form/SearchButton.tsx";
 const DistanceSection = () => {
   return (
     <div style={{padding: "20px"}}>
-      <Form layout="inline">
+      <Form layout="inline" style={{alignItems: "end"}}>
       <Form.Item
           name="termo"
           label="Termo"
@@ -17,13 +17,13 @@ const DistanceSection = () => {
         >
           <TermInput placeholder="Insira o termo de busca" />
         </Form.Item>
-        <Form.Item name="distancia">
+        <Form.Item name="distancia" label="Distancia" colon={false}>
           <DistanceDropdown/>
         </Form.Item>
-        <Form.Item name="classe">
+        <Form.Item name="classe" label="Classe" colon={false}>
           <ClassDropdown />
         </Form.Item>
-        <Form.Item name="situacao">
+        <Form.Item name="situacao" label="Situação" colon={false}>
           <SituationDropdown />
         </Form.Item>
         <Form.Item>

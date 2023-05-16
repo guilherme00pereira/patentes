@@ -1,5 +1,5 @@
 import { ConfigProvider, Select, Form } from 'antd'
-import { selectClassOptions } from '../../../config/data.ts'
+import { selectClassOptions } from '../../../config/data.tsx'
 import { selectTheme } from '../../../config/theme.ts'
 
 const ClassDropdown = () => {

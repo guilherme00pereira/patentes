@@ -1,5 +1,5 @@
 import { ConfigProvider, Select, Form } from 'antd'
-import { selectOptions } from '../../../config/data.ts'
+import { selectOptions } from '../../../config/data.tsx'
 import { selectTheme } from '../../../config/theme.ts'
 
 const SituationDropdown = () => {

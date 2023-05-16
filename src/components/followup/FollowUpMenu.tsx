@@ -1,26 +1,6 @@
 import { Tabs } from 'antd'
-import type { TabsProps } from 'antd'
-import IncludeProcess from './sections/IncludeProcess.tsx'
-import ProcessSearch from "./sections/ProcessSearch.tsx";
-import FollowingProcess from "./sections/FollowingProcess.tsx";
+import { followupMenuItems } from "../../config/data.tsx";
 
-const items: TabsProps['items'] = [
-  {
-    key: '1',
-    label: `Inclusao/Exclusao de Processos`,
-    children: <IncludeProcess />,
-  },
-  {
-    key: '2',
-    label: `Busca de Processos`,
-    children: <ProcessSearch />,
-  },
-  {
-    key: '3',
-    label: `Processos em Acompanhamento`,
-    children: <FollowingProcess />,
-  },
-]
 
 const FollowUpMenu = () => {
   const onChange = () => {
@@ -31,7 +11,7 @@ const FollowUpMenu = () => {
       <div className="tab-wrapper">
       <Tabs
         defaultActiveKey="1"
-        items={items}
+        items={followupMenuItems}
         onChange={onChange}
         centered
         tabBarStyle={{ color: '#F2843A' }}

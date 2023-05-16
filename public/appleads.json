@@ -1,0 +1,115 @@
+{
+  "statusCode": 200,
+  "body": {
+    "0": {
+      "processo_numero": "924429330",
+      "nome": "POLICL\u00cdNICAS SANTA CASA",
+      "titular_nome_razao_social": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE CURITIBA",
+      "titular_uf": "PR",
+      "titular_pais": "BR",
+      "marca_apresentacao": "Nominativa",
+      "classe_nice_codigo": "42",
+      "situacao": "Registered"
+    },
+    "1": {
+      "processo_numero": "924428961",
+      "nome": "POLICL\u00cdNICAS SANTA CASA",
+      "titular_nome_razao_social": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE CURITIBA",
+      "titular_uf": "PR",
+      "titular_pais": "BR",
+      "marca_apresentacao": "Figurativa",
+      "classe_nice_codigo": "42",
+      "situacao": "Registered"
+    },
+    "2": {
+      "processo_numero": "925233536",
+      "nome": "ABRA CASA",
+      "titular_nome_razao_social": "AMPLEXO FRANQUEADORA LTDA",
+      "titular_uf": "RJ",
+      "titular_pais": "BR",
+      "marca_apresentacao": "Mista",
+      "classe_nice_codigo": "42",
+      "situacao": "Registered"
+    },
+    "3": {
+      "processo_numero": "823572374",
+      "nome": "CASA PUBLICADORA BRASILEIRA",
+      "titular_nome_razao_social": "nan",
+      "titular_uf": "nan",
+      "titular_pais": "nan",
+      "marca_apresentacao": "Nominativa",
+      "classe_nice_codigo": "42",
+      "situacao": "Application refused"
+    },
+    "4": {
+      "processo_numero": "920205925",
+      "nome": "LA CASA",
+      "titular_nome_razao_social": "GL DO BRASIL PARTICIPA\u00c7\u00d5ES E CONSULTORIA S.A.",
+      "titular_uf": "SP",
+      "titular_pais": "BR",
+      "marca_apresentacao": "Mista",
+      "classe_nice_codigo": "42",
+      "situacao": "Registered"
+    },
+    "5": {
+      "processo_numero": "900495944",
+      "nome": "CASA & CASA",
+      "titular_nome_razao_social": "nan",
+      "titular_uf": "nan",
+      "titular_pais": "nan",
+      "marca_apresentacao": "Mista",
+      "classe_nice_codigo": "42",
+      "situacao": "Application withdrawn"
+    },
+    "6": {
+      "processo_numero": "924550120",
+      "nome": "Porto Casa",
+      "titular_nome_razao_social": "PORTO SEGURO SERVI\u00c7OS E COM\u00c9RCIO S.A.",
+      "titular_uf": "SP",
+      "titular_pais": "BR",
+      "marca_apresentacao": "Nominativa",
+      "classe_nice_codigo": "42",
+      "situacao": "Registered"
+    },
+    "7": {
+      "processo_numero": "924428520",
+      "nome": "SANTA CASA DE MISERIC\u00d3RDIA NOSSA SENHORA DAS GRA\u00c7AS ? PI\u00caN",
+      "titular_nome_razao_social": "IRMANDADE DA SANTA CASA DE MISERICORDIA DE CURITIBA",
+      "titular_uf": "PR",
+      "titular_pais": "BR",
+      "marca_apresentacao": "Mista",
+      "classe_nice_codigo": "42",
+      "situacao": "Registered"
+    },
+    "8": {
+      "processo_numero": "829985891",
+      "nome": "CASA DO PORTADOR DE MARCAPASSO",
+      "titular_nome_razao_social": "nan",
+      "titular_uf": "nan",
+      "titular_pais": "nan",
+      "marca_apresentacao": "Mista",
+      "classe_nice_codigo": "42",
+      "situacao": "Expired"
+    },
+    "9": {
+      "processo_numero": "921176449",
+      "nome": "Casa de Fazer ARQUITETURA & ARTE",
+      "titular_nome_razao_social": "ANA ELISA FIGUEIREDO D\u00b4AGNOLUZZO",
+      "titular_uf": "PR",
+      "titular_pais": "BR",
+      "marca_apresentacao": "Mista",
+      "classe_nice_codigo": "42",
+      "situacao": "Registered"
+    },
+    "10": {
+      "processo_numero": "901692557",
+      "nome": "CASA BARROCO",
+      "titular_nome_razao_social": "nan",
+      "titular_uf": "nan",
+      "titular_pais": "nan",
+      "marca_apresentacao": "Mista",
+      "classe_nice_codigo": "42",
+      "situacao": "Application refused/cancelled/withdraw/expired"
+    }
+  }
+}
