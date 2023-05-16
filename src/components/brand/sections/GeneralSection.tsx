@@ -25,7 +25,7 @@ const GeneralSection = () => {
           <SituationDropdown />
         </Form.Item>
         <Form.Item>
-          <SearchButton showText />
+          <SearchButton showText source='g' />
         </Form.Item>
       </Form>
     </div>

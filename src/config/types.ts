@@ -9,3 +9,9 @@ export type BrandTableData = {
   country: string;
   state: string;
 }
+
+export type GeneralSearchParams = {
+  termo: string;
+  classe: string;
+  situacao: string;
+}

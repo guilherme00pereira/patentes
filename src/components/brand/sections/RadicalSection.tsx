@@ -16,7 +16,7 @@ const RadicalSection = () => {
           <SituationDropdown />
         </Form.Item>
         <Form.Item>
-          <SearchButton showText />
+          <SearchButton showText source="r" />
         </Form.Item>
       </Form>
     </div>
