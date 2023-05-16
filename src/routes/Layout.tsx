@@ -3,12 +3,15 @@ import { Outlet } from 'react-router-dom'
 import {contentTheme} from '../config/theme.ts'
 import Sidebar from "../components/Sidebar.tsx";
 import { IconContext } from "react-icons";
+import '@fontsource/barlow'
+
 
 const { Content } = Container
 
 const Layout = () => {
 
   return (
+      <ConfigProvider theme={{ token: {fontFamily: "Barlow"}}}>
     <Container style={{ minHeight: '100vh' }}>
       <IconContext.Provider value={{ size: "1.25em" }}>
       <Sidebar />
@@ -21,6 +24,7 @@ const Layout = () => {
       </Container>
       </IconContext.Provider>
     </Container>
+      </ConfigProvider>
   )
 }
 

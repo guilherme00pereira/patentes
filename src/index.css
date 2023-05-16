@@ -76,6 +76,7 @@ label {
     justify-content: space-between;
     align-items: center;
     text-transform: uppercase;
+    font-weight: bold;
 }
 
 .table-wrapper {

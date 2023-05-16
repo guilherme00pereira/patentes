@@ -12,8 +12,10 @@ export const BrandContext = createContext<{
 
 export const FollowUpContext = createContext<{
     setRenderTable: (newValue: boolean) => void,
-    setLoading: (newValue: boolean) => void
+    setLoading: (newValue: boolean) => void,
+    setBlank: (newValue: boolean) => void
 }>({
     setRenderTable: () => undefined,
-    setLoading: () => undefined
+    setLoading: () => undefined,
+    setBlank: () => undefined
 })

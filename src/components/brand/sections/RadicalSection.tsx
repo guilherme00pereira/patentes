@@ -8,17 +8,15 @@ const RadicalSection = () => {
   return (
     <div style={{padding: "20px"}}>
       <Form layout="inline">
-        <Form.Item>
           <MultipleTermsInput/>
+        <Form.Item name="classe" label="Classe" colon={false}>
+          <ClassDropdown />
+        </Form.Item>
+        <Form.Item name="situacao" label="Situação" colon={false}>
+          <SituationDropdown />
         </Form.Item>
         <Form.Item>
-          <ClassDropdown/>
-        </Form.Item>
-        <Form.Item>
-          <SituationDropdown/>
-        </Form.Item>
-        <Form.Item>
-          <SearchButton/>
+          <SearchButton showText />
         </Form.Item>
       </Form>
     </div>

@@ -1,8 +1,10 @@
-import React, { useState } from 'react'
-import { Input, Form, Modal, Button, ConfigProvider, Typography } from 'antd'
+import React, { useState, useContext } from 'react'
+import { Input, Form, Button, ConfigProvider } from 'antd'
 import { MdOutlineSearch } from 'react-icons/md'
+import {FollowUpContext} from "../../../config/context.tsx";
 
 const ProcessSearch = () => {
+  const {setLoading, setBlank} = useContext(FollowUpContext)
   const [processNumber, setProcessNumber] = useState('')
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -12,6 +14,8 @@ const ProcessSearch = () => {
   }
 
   const submitHandler = () => {
+    setLoading(true)
+    setBlank(false)
     console.log('buscar processo')
   }
 

@@ -1,12 +1,31 @@
-import {Input} from "antd";
+import { Input, Form } from 'antd'
 
 const MultipleTermsInput = () => {
-    return (
+  return (
+    <div>
+      <div>
         <div>
-            <Input placeholder="Termo" size="large" style={{width: "100px"}} />
-            <Input placeholder="Termo" size="large" style={{width: "100px"}} />
+          <Form.Item name="input01">
+            <Input placeholder="Insira o termo de busca" size="large" style={{ width: '100px' }} />
+          </Form.Item>
+          <span>OU</span>
+          <Form.Item name="input02">
+            <Input placeholder="Insira o termo de busca" size="large" style={{ width: '100px' }} />
+          </Form.Item>
         </div>
-    );
-};
+        <div>
+          <Input placeholder="Insira o termo de busca" size="large" style={{ width: '100px' }} />
+          <span>OU</span>
+          <Input placeholder="Insira o termo de busca" size="large" style={{ width: '100px' }} />
+        </div>
+        <div>
+          <Input placeholder="Insira o termo de busca" size="large" style={{ width: '100px' }} />
+          <span>OU</span>
+          <Input placeholder="Insira o termo de busca" size="large" style={{ width: '100px' }} />
+        </div>
+      </div>
+    </div>
+  )
+}
 
-export default MultipleTermsInput;
+export default MultipleTermsInput

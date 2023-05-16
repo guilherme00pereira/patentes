@@ -59,7 +59,7 @@ const IncludeProcess = () => {
             icon={<MdOutlineDeleteForever />}
             onClick={showModal}
             className="iconic-button"
-            style={{ width: '200px' }}
+            style={{ width: '200px', fontWeight: 'bold' }}
           >
             Excluir Processo
           </Button>
@@ -71,7 +71,7 @@ const IncludeProcess = () => {
             icon={<MdPlaylistAdd />}
             onClick={handleIncludeProcess}
             className="iconic-button"
-            style={{ width: '200px' }}
+            style={{ width: '200px', fontWeight: 'bold' }}
           >
             Incluir Processo
           </Button>
