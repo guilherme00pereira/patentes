@@ -1,4 +1,4 @@
-import type { SelectProps } from 'antd'
+import type {SelectProps} from 'antd'
 import {columnType, FollowDataType} from './types'
 import {TabsProps} from "antd";
 import GeneralSection from "../components/brand/sections/GeneralSection.tsx";
@@ -10,58 +10,58 @@ import FollowingProcess from "../components/followup/sections/FollowingProcess.t
 
 
 export const brandMenuItems: TabsProps['items'] = [
-    {
-        key: '1',
-        label: `Simples`,
-        children: <GeneralSection/>,
-    },
-    {
-        key: '2',
-        label: `Radical`,
-        children: <RadicalSection/>,
-    },
-    {
-        key: '3',
-        label: `Distância`,
-        children: <DistanceSection/>,
-    },
-    {
-        key: '4',
-        label: `Relatório`,
-        children: <GeneralSection/>,
-    },
-    {
-        key: '5',
-        label: `Inteligência Artificial`,
-        children: <GeneralSection/>,
-    },
+  {
+    key: '1',
+    label: `Simples`,
+    children: <GeneralSection/>,
+  },
+  {
+    key: '2',
+    label: `Radical`,
+    children: <RadicalSection/>,
+  },
+  {
+    key: '3',
+    label: `Distância`,
+    children: <DistanceSection/>,
+  },
+  {
+    key: '4',
+    label: `Relatório`,
+    children: <GeneralSection/>,
+  },
+  {
+    key: '5',
+    label: `Inteligência Artificial`,
+    children: <GeneralSection/>,
+  },
 ];
 
 export const followupMenuItems: TabsProps['items'] = [
-    {
-        key: '1',
-        label: `Inclusao/Exclusao de Processos`,
-        children: <IncludeProcess />,
-    },
-    {
-        key: '2',
-        label: `Busca de Processos`,
-        children: <ProcessSearch />,
-    },
-    {
-        key: '3',
-        label: `Processos em Acompanhamento`,
-        children: <FollowingProcess />,
-    },
+  {
+    key: '1',
+    label: `Inclusao/Exclusao de Processos`,
+    children: <IncludeProcess/>,
+  },
+  {
+    key: '2',
+    label: `Busca de Processos`,
+    children: <ProcessSearch/>,
+  },
+  {
+    key: '3',
+    label: `Processos em Acompanhamento`,
+    children: <FollowingProcess/>,
+  },
 ];
 
 export const selectOptions: SelectProps['options'] = [
-  { value: 'td', label: 'Todos' },
-  { value: 'pa', label: 'Pedidos Ativos' },
-  { value: 'pe', label: 'Pedidos Extintos/Arquivados' },
+  {value: 'td', label: 'Todos'},
+  {value: 'pa', label: 'Pedidos Ativos'},
+  {value: 'pe', label: 'Pedidos Extintos/Arquivados'},
 ]
 
-const createSelectClassOptions: SelectProps['options'] = [{ value: '0', label: 'Todos' }]
+const createSelectClassOptions: SelectProps['options'] = [{value: '0', label: 'Todos'}]
 
 export const selectClassOptions = () => {
   for (let i = 1; i <= 45; i++) {
@@ -123,62 +123,94 @@ export const brandTableColumns: columnType[] = [
 
 
 export const followTableColumns: columnType[] = [
-    {
-        title: 'Processo',
-        dataIndex: 'processo',
-        key: 'processo',
-    },
-    {
-        title: 'Marca',
-        dataIndex: 'marca',
-        key: 'marca',
-    },
-    {
-        title: 'RPI',
-        dataIndex: 'rpi',
-        key: 'rpi',
-    },
-    {
-        title: 'Data RPI',
-        dataIndex: 'dataRpi',
-        key: 'dataRpi',
-    },
-    {
-        title: 'Complemento',
-        dataIndex: 'complemento',
-        key: 'complemento',
-    },
+  {
+    title: 'Processo',
+    dataIndex: 'processo',
+    key: 'processo',
+  },
+  {
+    title: 'Marca',
+    dataIndex: 'marca',
+    key: 'marca',
+  },
+  {
+    title: 'RPI',
+    dataIndex: 'rpi',
+    key: 'rpi',
+  },
+  {
+    title: 'Data RPI',
+    dataIndex: 'dataRpi',
+    key: 'dataRpi',
+  },
+  {
+    title: 'Complemento',
+    dataIndex: 'complemento',
+    key: 'complemento',
+  },
 ]
 
 export const followTableData: FollowDataType[] = [
-    {
-        key: '1',
-        processo: 'John Brown',
-        marca: 32,
-        rpi: 'New York No. 1 Lake Park',
-        dataRpi: 'New York No. 1 Lake Park',
-        complemento: 'New York No. 1 Lake Park',
-    },
-    {
-        key: '2',
-        processo: 'Jim Green',
-        marca: 42,
-        rpi: 'London No. 1 Lake Park',
-        dataRpi: 'London No. 1 Lake Park',
-        complemento: 'London No. 1 Lake Park',
-    },
-    {
-        key: '3',
-        processo: 'Joe Black',
-        marca: 32,
-        rpi: 'Sydney No. 1 Lake Park',
-        dataRpi: 'Sydney No. 1 Lake Park',
-        complemento: 'Sydney No. 1 Lake Park',
-    }
+  {
+    key: '1',
+    processo: 'John Brown',
+    marca: 32,
+    rpi: 'New York No. 1 Lake Park',
+    dataRpi: 'New York No. 1 Lake Park',
+    complemento: 'New York No. 1 Lake Park',
+  },
+  {
+    key: '2',
+    processo: 'Jim Green',
+    marca: 42,
+    rpi: 'London No. 1 Lake Park',
+    dataRpi: 'London No. 1 Lake Park',
+    complemento: 'London No. 1 Lake Park',
+  },
+  {
+    key: '3',
+    processo: 'Joe Black',
+    marca: 32,
+    rpi: 'Sydney No. 1 Lake Park',
+    dataRpi: 'Sydney No. 1 Lake Park',
+    complemento: 'Sydney No. 1 Lake Park',
+  }
 ]
 export const exportSelect: Array<object> = [
-    { value: 'pdf', label: '.pdf' },
-    { value: 'xlsx', label: '.xlsx' },
+  {value: 'pdf', label: '.pdf'},
+  {value: 'xlsx', label: '.xlsx'},
+]
+
+interface ITableBadges {
+  key: string;
+  value: () => React.ReactElement;
+}
+
+const presentationTemplate = ({value, className}: { value: string, className: string }) => {
+  return (
+    <div className={`badge-table ${className}`}><span>{value}</span></div>
+  )
+}
+
+const situationTemplate = ({value, className}: { value: string, className: string }) => {
+  return (
+    <div className={className}><span>{value}</span></div>
+  )
+}
+
+export const badgeTypes: ITableBadges[] = [
+  {key: "Nominativa", value: () => presentationTemplate({value: "N", className: "nominativa"})},
+  {key: "Figurativa", value: () => presentationTemplate({value: "F", className: "figurativa"})},
+  {key: "Mista", value: () => presentationTemplate({value: "M", className: "mista"})},
+  {key: "Registered", value: () => situationTemplate({value: "Registrado", className: "registrado"})},
+  {key: "Expired", value: () => situationTemplate({value: "Extinto/Arquivado", className: "arquivado"})},
+  {key: "Application withdrawn", value: () => situationTemplate({value: "Extinto/Arquivado", className: "arquivado"})},
+  {key: "Application refused", value: () => situationTemplate({value: "Extinto/Arquivado", className: "arquivado"})},
+  {
+    key: "Application refused/cancelled/withdraw/expired",
+    value: () => situationTemplate({value: "Extinto/Arquivado", className: "arquivado"})
+  },
+
 ]
 
 export const lorem = `

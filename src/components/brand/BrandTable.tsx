@@ -4,29 +4,11 @@ import PreTable from "../PreTable.tsx";
 import {useContext} from "react";
 import {BrandContext} from "../../config/context.tsx";
 import Column from "antd/es/table/Column";
+import { badgeTypes } from "../../config/data.tsx";
+
 
 const BrandTable = () => {
     const { tableData } = useContext(BrandContext)
-
-    const renderPresentationBadge = (presentation: string) => {
-        switch (presentation) {
-            case "Nominativa":
-                return <div className="badge-table nominativa"><span>N</span></div>
-            case "Figurativa":
-                return <div className="badge-table figurativa"><span>F</span></div>
-            case "Mista":
-                return <div className="badge-table mista"><span>M</span></div>
-        }
-    }
-
-    const renderSituationBadge = (situation: string) => {
-        switch (situation) {
-            case "Registered":
-                return <div className=""><span>Registrado</span></div>
-            default:
-                return <div className=""></div>
-        }
-    }
 
   return (
       <div className="table-wrapper">
@@ -36,10 +18,10 @@ const BrandTable = () => {
             <Column title="Processo" dataIndex="process"/>
             <Column title="Marca" dataIndex="brand"/>
             <Column title="Apresentação" dataIndex="presentation" render={(presentation) => {
-                return renderPresentationBadge(presentation)
+                return badgeTypes.find(type => type.key === presentation)?.value()
             }}/>
             <Column title="Situação" dataIndex="situation" render={(situation) => {
-                return renderSituationBadge(situation)
+                return badgeTypes.find(type => type.key === situation)?.value()
             }}/>
             <Column title="Nome/Razão Social" dataIndex="name"/>
             <Column title="Atividades" dataIndex="activities"/>
