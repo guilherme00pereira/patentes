@@ -6,12 +6,12 @@ const MultipleTermsInput = () => {
       <div className="multiple-terms">
         <div className='multiple-terms-titles'>Termo</div>
         <div>
-          <div className="multiple-terms-or-box">
+          <div className="multiple-terms-box">
             <Form.Item name="input01">
               <Input
                 placeholder="Insira o termo de busca"
                 size="large"
-                style={{ width: '180px' }}
+                className="multiple-terms-box-input"
               />
             </Form.Item>
             <span>OU</span>
@@ -19,16 +19,16 @@ const MultipleTermsInput = () => {
               <Input
                 placeholder="Insira o termo de busca"
                 size="large"
-                style={{ width: '180px' }}
+                className="multiple-terms-box-input"
               />
             </Form.Item>
           </div>
-          <div className="multiple-terms-or-box">
+          <div className="multiple-terms-box">
             <Form.Item name="input03">
               <Input
                 placeholder="Insira o termo de busca"
                 size="large"
-                style={{ width: '180px' }}
+                className="multiple-terms-box-input"
               />
             </Form.Item>
             <span>OU</span>
@@ -36,16 +36,16 @@ const MultipleTermsInput = () => {
               <Input
                 placeholder="Insira o termo de busca"
                 size="large"
-                style={{ width: '180px' }}
+                className="multiple-terms-box-input"
               />
             </Form.Item>
           </div>
-          <div className="multiple-terms-or-box">
+          <div className="multiple-terms-box">
             <Form.Item name="input05">
               <Input
                 placeholder="Insira o termo de busca"
                 size="large"
-                style={{ width: '180px' }}
+                className="multiple-terms-box-input"
               />
             </Form.Item>
             <span>OU</span>
@@ -53,7 +53,7 @@ const MultipleTermsInput = () => {
               <Input
                 placeholder="Insira o termo de busca"
                 size="large"
-                style={{ width: '180px' }}
+                className="multiple-terms-box-input"
               />
             </Form.Item>
           </div>
@@ -61,30 +61,30 @@ const MultipleTermsInput = () => {
       </div>
       <div>
         <div className='multiple-terms-titles' style={{textAlign: "center"}}>NÃO</div>
-        <div className="multiple-terms-or-box">
+        <div className="multiple-terms-box">
             <Form.Item name="input07">
               <Input
                 placeholder="Insira o termo de busca"
                 size="large"
-                style={{ width: '180px' }}
+                className="multiple-terms-box-input"
               />
             </Form.Item>
           </div>
-          <div className="multiple-terms-or-box">
+          <div className="multiple-terms-box">
             <Form.Item name="input08">
               <Input
                 placeholder="Insira o termo de busca"
                 size="large"
-                style={{ width: '180px' }}
+                className="multiple-terms-box-input"
               />
             </Form.Item>
           </div>
-          <div className="multiple-terms-or-box">
+          <div className="multiple-terms-box">
             <Form.Item name="input09">
               <Input
                 placeholder="Insira o termo de busca"
                 size="large"
-                style={{ width: '180px' }}
+                className="multiple-terms-box-input"
               />
             </Form.Item>
           </div>

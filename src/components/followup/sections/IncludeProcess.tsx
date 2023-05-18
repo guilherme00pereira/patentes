@@ -38,9 +38,12 @@ const IncludeProcess = () => {
 
   const handleIncludeProcess = () => {
     setRenderTable(false)
-    setLoading(false)
-    setResult({ success: true, message: '' })
-    setRenderResult(true)
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+      setResult({ success: true, message: 'Processo incluído com sucesso!' })
+      setRenderResult(true)
+    }, 3000)
   }
 
   return (

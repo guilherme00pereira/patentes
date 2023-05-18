@@ -28,7 +28,6 @@ const SearchButton = ({ showText, source }: { showText?: boolean; source: string
             state: item[1].titular_uf
           })
         })
-      console.table(tableData)
       setTableData([...tableData])
     })
     // form.validateFields().then((params) => {
