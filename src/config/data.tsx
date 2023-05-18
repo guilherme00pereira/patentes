@@ -1,6 +1,7 @@
 import type {SelectProps} from 'antd'
-import {columnType, FollowDataType} from './types'
+import {columnType, FollowTableData} from './types'
 import {TabsProps} from "antd";
+import { MdHourglassBottom, MdClose, MdCheck } from 'react-icons/md';
 import GeneralSection from "../components/brand/sections/GeneralSection.tsx";
 import RadicalSection from "../components/brand/sections/RadicalSection.tsx";
 import DistanceSection from "../components/brand/sections/DistanceSection.tsx";
@@ -77,47 +78,38 @@ export const brandTableColumns: columnType[] = [
   {
     title: 'Classe',
     dataIndex: 'class',
-    key: 'class',
   },
   {
     title: 'Processo',
     dataIndex: 'process',
-    key: 'process',
   },
   {
     title: 'Marca',
     dataIndex: 'brand',
-    key: 'brand',
   },
   {
     title: 'Apresentação',
     dataIndex: 'presentation',
-    key: 'presentation',
   },
   {
     title: 'Situação',
     dataIndex: 'situation',
-    key: 'situation',
   },
   {
     title: 'Nome/Razão Social',
     dataIndex: 'name',
-    key: 'name',
   },
   {
     title: 'Atividades',
     dataIndex: 'activities',
-    key: 'activities',
   },
   {
     title: 'País',
     dataIndex: 'country',
-    key: 'country',
   },
   {
     title: 'UF',
     dataIndex: 'state',
-    key: 'state',
   },
 ]
 
@@ -126,33 +118,28 @@ export const followTableColumns: columnType[] = [
   {
     title: 'Processo',
     dataIndex: 'processo',
-    key: 'processo',
   },
   {
     title: 'Marca',
     dataIndex: 'marca',
-    key: 'marca',
   },
   {
     title: 'RPI',
     dataIndex: 'rpi',
-    key: 'rpi',
   },
   {
     title: 'Data RPI',
     dataIndex: 'dataRpi',
-    key: 'dataRpi',
   },
   {
     title: 'Complemento',
     dataIndex: 'complemento',
-    key: 'complemento',
   },
 ]
 
-export const followTableData: FollowDataType[] = [
+export const followTableData: FollowTableData[] = [
   {
-    key: '1',
+    id: '1',
     processo: 'John Brown',
     marca: 32,
     rpi: 'New York No. 1 Lake Park',
@@ -160,7 +147,7 @@ export const followTableData: FollowDataType[] = [
     complemento: 'New York No. 1 Lake Park',
   },
   {
-    key: '2',
+    id: '2',
     processo: 'Jim Green',
     marca: 42,
     rpi: 'London No. 1 Lake Park',
@@ -168,7 +155,7 @@ export const followTableData: FollowDataType[] = [
     complemento: 'London No. 1 Lake Park',
   },
   {
-    key: '3',
+    id: '3',
     processo: 'Joe Black',
     marca: 32,
     rpi: 'Sydney No. 1 Lake Park',
@@ -192,9 +179,33 @@ const presentationTemplate = ({value, className}: { value: string, className: st
   )
 }
 
-const situationTemplate = ({value, className}: { value: string, className: string }) => {
+const situationTemplate = ({value, icon}: { value: string, icon: () => any }) => {
   return (
-    <div className={className}><span>{value}</span></div>
+    <div style={{display: "flex"}}>{value}{icon()}</div>
+  )
+}
+
+const registeredIcon = () => {
+  return (
+    <span className='registered-icon'>R</span>
+  )
+}
+
+const expiredIcon = () => {
+  return (
+    <MdClose style={{color: "#DC3545"}}/>
+  )
+}
+
+const awatingIcon = () => {
+  return (
+    <MdHourglassBottom style={{color: "#FFC107"}} />
+  )
+}
+
+const activeIcon = () => {
+  return (
+    <MdCheck style={{color: "#28A745"}} />
   )
 }
 
@@ -202,13 +213,13 @@ export const badgeTypes: ITableBadges[] = [
   {key: "Nominativa", value: () => presentationTemplate({value: "N", className: "nominativa"})},
   {key: "Figurativa", value: () => presentationTemplate({value: "F", className: "figurativa"})},
   {key: "Mista", value: () => presentationTemplate({value: "M", className: "mista"})},
-  {key: "Registered", value: () => situationTemplate({value: "Registrado", className: "registrado"})},
-  {key: "Expired", value: () => situationTemplate({value: "Extinto/Arquivado", className: "arquivado"})},
-  {key: "Application withdrawn", value: () => situationTemplate({value: "Extinto/Arquivado", className: "arquivado"})},
-  {key: "Application refused", value: () => situationTemplate({value: "Extinto/Arquivado", className: "arquivado"})},
+  {key: "Registered", value: () => situationTemplate({value: "Registrado", icon: registeredIcon})},
+  {key: "Expired", value: () => situationTemplate({value: "Extinto/Arquivado", icon: expiredIcon})},
+  {key: "Application withdrawn", value: () => situationTemplate({value: "Extinto/Arquivado", icon: awatingIcon})},
+  {key: "Application refused", value: () => situationTemplate({value: "Extinto/Arquivado", icon: expiredIcon})},
   {
     key: "Application refused/cancelled/withdraw/expired",
-    value: () => situationTemplate({value: "Extinto/Arquivado", className: "arquivado"})
+    value: () => situationTemplate({value: "Extinto/Arquivado", icon: activeIcon})
   },
 
 ]

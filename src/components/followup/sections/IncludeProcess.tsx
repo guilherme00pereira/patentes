@@ -1,7 +1,8 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { Input, Form, Modal, Button, ConfigProvider, Typography } from 'antd'
 import { MdOutlineDeleteForever, MdPlaylistAdd } from 'react-icons/md'
 import { ButtonProps } from 'antd/es/button/button'
+import { FollowUpContext } from '../../../config/context'
 
 const { Title } = Typography
 
@@ -11,10 +12,13 @@ const okButtonProps: ButtonProps = {
 }
 
 const IncludeProcess = () => {
+  const { setLoading, setRenderTable, setRenderResult, setResult } = useContext(FollowUpContext)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [processNumber, setProcessNumber] = useState('')
 
   const showModal = () => {
+    setRenderTable(false)
+    setLoading(false)
     setIsModalOpen(true)
   }
 
@@ -33,7 +37,10 @@ const IncludeProcess = () => {
   }
 
   const handleIncludeProcess = () => {
-    console.log('Incluir processo')
+    setRenderTable(false)
+    setLoading(false)
+    setResult({ success: true, message: '' })
+    setRenderResult(true)
   }
 
   return (

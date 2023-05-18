@@ -152,3 +152,46 @@ label {
     background-color: #DC3545;
     border: 1px solid #BF2E3C;
 }
+
+.registered-icon {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    color: #007BFF;
+    border: 2px solid #007BFF;
+    font-weight: bolder;    
+    font-size: 12px;
+    margin-left: 6px;
+}
+
+.multiple-terms {
+    display: flex;
+    flex-direction: column;
+    border-right: 1px solid #080C66;
+    margin-right: 10px;
+}
+
+.multiple-terms-or-box {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+}
+
+.multiple-terms-or-box div {
+    margin: 2px 0 2px 2px;
+}
+
+.multiple-terms-or-box span {
+    font-weight: bold;
+}
+
+.multiple-terms-titles {
+    color: #080C66;
+    font-weight: bold;
+    padding-left: 10px;
+}

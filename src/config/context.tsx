@@ -1,5 +1,5 @@
 import {createContext} from "react";
-import {BrandTableData} from "./types.ts";
+import {BrandTableData, resultType} from "./types.ts";
 
 export const BrandContext = createContext<{
     setRenderTable: (newValue: boolean) => void,
@@ -18,9 +18,15 @@ export const BrandContext = createContext<{
 export const FollowUpContext = createContext<{
     setRenderTable: (newValue: boolean) => void,
     setLoading: (newValue: boolean) => void,
-    setBlank: (newValue: boolean) => void
+    setBlank: (newValue: boolean) => void,
+    setRenderResult: (newValue: boolean) => void,
+    setResult: (newValue: resultType) => void,
+    result: resultType
 }>({
     setRenderTable: () => undefined,
     setLoading: () => undefined,
-    setBlank: () => undefined
+    setBlank: () => undefined,
+    setRenderResult: () => undefined,
+    setResult: () => undefined,
+    result: {success: false, message: ''}
 })

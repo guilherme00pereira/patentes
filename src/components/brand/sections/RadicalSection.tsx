@@ -7,7 +7,7 @@ import SearchButton from "../form/SearchButton.tsx";
 const RadicalSection = () => {
   return (
     <div style={{padding: "20px"}}>
-      <Form layout="inline" style={{alignItems: "end"}}>
+      <Form layout="inline" style={{alignItems: "initial"}}>
           <MultipleTermsInput/>
         <Form.Item name="classe" label="Classe" colon={false}>
           <ClassDropdown />
@@ -15,7 +15,7 @@ const RadicalSection = () => {
         <Form.Item name="situacao" label="Situação" colon={false}>
           <SituationDropdown />
         </Form.Item>
-        <Form.Item>
+        <Form.Item style={{paddingTop: "30px"}}>
           <SearchButton showText source="r" />
         </Form.Item>
       </Form>

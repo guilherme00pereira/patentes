@@ -5,7 +5,7 @@ import PreTable from "../PreTable.tsx";
 const FollowUpTable = () => {
   return (
       <div className="table-wrapper">
-        <PreTable/>
+        <PreTable total={followTableColumns.length} columns={followTableColumns} dataSource={followTableData}/>
         <Table columns={followTableColumns} pagination={{position: ["bottomCenter"]}} dataSource={followTableData} />
       </div>
   );

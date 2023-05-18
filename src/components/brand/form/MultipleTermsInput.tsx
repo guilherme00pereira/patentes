@@ -2,27 +2,92 @@ import { Input, Form } from 'antd'
 
 const MultipleTermsInput = () => {
   return (
-    <div>
+    <div style={{display: "flex"}}>
+      <div className="multiple-terms">
+        <div className='multiple-terms-titles'>Termo</div>
+        <div>
+          <div className="multiple-terms-or-box">
+            <Form.Item name="input01">
+              <Input
+                placeholder="Insira o termo de busca"
+                size="large"
+                style={{ width: '180px' }}
+              />
+            </Form.Item>
+            <span>OU</span>
+            <Form.Item name="input02">
+              <Input
+                placeholder="Insira o termo de busca"
+                size="large"
+                style={{ width: '180px' }}
+              />
+            </Form.Item>
+          </div>
+          <div className="multiple-terms-or-box">
+            <Form.Item name="input03">
+              <Input
+                placeholder="Insira o termo de busca"
+                size="large"
+                style={{ width: '180px' }}
+              />
+            </Form.Item>
+            <span>OU</span>
+            <Form.Item name="input04">
+              <Input
+                placeholder="Insira o termo de busca"
+                size="large"
+                style={{ width: '180px' }}
+              />
+            </Form.Item>
+          </div>
+          <div className="multiple-terms-or-box">
+            <Form.Item name="input05">
+              <Input
+                placeholder="Insira o termo de busca"
+                size="large"
+                style={{ width: '180px' }}
+              />
+            </Form.Item>
+            <span>OU</span>
+            <Form.Item name="input06">
+              <Input
+                placeholder="Insira o termo de busca"
+                size="large"
+                style={{ width: '180px' }}
+              />
+            </Form.Item>
+          </div>
+        </div>
+      </div>
       <div>
-        <div>
-          <Form.Item name="input01">
-            <Input placeholder="Insira o termo de busca" size="large" style={{ width: '100px' }} />
-          </Form.Item>
-          <span>OU</span>
-          <Form.Item name="input02">
-            <Input placeholder="Insira o termo de busca" size="large" style={{ width: '100px' }} />
-          </Form.Item>
-        </div>
-        <div>
-          <Input placeholder="Insira o termo de busca" size="large" style={{ width: '100px' }} />
-          <span>OU</span>
-          <Input placeholder="Insira o termo de busca" size="large" style={{ width: '100px' }} />
-        </div>
-        <div>
-          <Input placeholder="Insira o termo de busca" size="large" style={{ width: '100px' }} />
-          <span>OU</span>
-          <Input placeholder="Insira o termo de busca" size="large" style={{ width: '100px' }} />
-        </div>
+        <div className='multiple-terms-titles' style={{textAlign: "center"}}>NÃO</div>
+        <div className="multiple-terms-or-box">
+            <Form.Item name="input07">
+              <Input
+                placeholder="Insira o termo de busca"
+                size="large"
+                style={{ width: '180px' }}
+              />
+            </Form.Item>
+          </div>
+          <div className="multiple-terms-or-box">
+            <Form.Item name="input08">
+              <Input
+                placeholder="Insira o termo de busca"
+                size="large"
+                style={{ width: '180px' }}
+              />
+            </Form.Item>
+          </div>
+          <div className="multiple-terms-or-box">
+            <Form.Item name="input09">
+              <Input
+                placeholder="Insira o termo de busca"
+                size="large"
+                style={{ width: '180px' }}
+              />
+            </Form.Item>
+          </div>
       </div>
     </div>
   )

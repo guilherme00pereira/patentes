@@ -13,8 +13,8 @@ export type BrandTableData = {
   state: string;
 }
 
-export type FollowDataType = {
-  key: string
+export type FollowTableData = {
+  id: string
   processo: string
   marca: number
   rpi: string
@@ -31,11 +31,15 @@ export type GeneralSearchParams = {
 export type PreTableParams = {
   total: number;
   columns: IExcelColumn[];
-  dataSource: BrandTableData[];
+  dataSource: any[];
 }
 
 export type columnType = {
   title: string,
   dataIndex: string,
-  key: string,
+}
+
+export type resultType = {
+  success: boolean,
+  message: string,
 }
