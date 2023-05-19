@@ -1,20 +1,22 @@
 import { Button, ConfigProvider } from 'antd'
 import { useContext } from 'react'
-import { BrandContext } from '../../../config/context.tsx'
+import { FormActionContext } from '../../../config/context.tsx'
 import { MdOutlineSearch } from 'react-icons/md'
-import {BrandTableData} from "../../../config/types.ts";
+import { BrandTableData } from '../../../config/types.ts'
 //import { getGeneralSearch } from '../../../lib/apiClient.ts'
 
 const SearchButton = ({ showText, source }: { showText?: boolean; source: string }) => {
-  const { setLoading, setBlank, setTableData } = useContext(BrandContext)
+  const { setLoading, setBlank, setTableData, setRenderTable } = useContext(FormActionContext)
   //const form = Form.useFormInstance()
 
   const searchGeneral = () => {
     const tableData: BrandTableData[] = []
-    fetch('./appleads.json').then((res) => {
+    fetch('./appleads.json')
+      .then((res) => {
         return res.json()
-    }).then((data) => {
-      Object.entries(data.body).forEach((item: any, index: number) => {
+      })
+      .then((data) => {
+        Object.entries(data.body).forEach((item: any, index: number) => {
           tableData.push({
             id: index.toString(),
             class: item[1].classe_nice_codigo,
@@ -23,13 +25,13 @@ const SearchButton = ({ showText, source }: { showText?: boolean; source: string
             presentation: item[1].marca_apresentacao,
             situation: item[1].situacao,
             name: item[1].nome,
-            activities: "",
+            activities: '',
             country: item[1].titular_pais,
-            state: item[1].titular_uf
+            state: item[1].titular_uf,
           })
         })
-      setTableData([...tableData])
-    })
+        setTableData([...tableData])
+      })
     // form.validateFields().then((params) => {
     //   getGeneralSearch({ ...params })
     //     .then((res) => {
@@ -43,11 +45,16 @@ const SearchButton = ({ showText, source }: { showText?: boolean; source: string
   }
 
   const submitHandler = () => {
-    setBlank(false)
+    setRenderTable(false)
+    
     setLoading(true)
-    if (source === 'g') {
-      searchGeneral()
-    }
+    setTimeout(() => {
+      setBlank(false)
+      setLoading(true)
+      if (source === 'g') {
+        searchGeneral()
+      }
+    }, 3000)
   }
 
   return (

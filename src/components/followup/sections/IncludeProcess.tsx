@@ -2,7 +2,7 @@ import React, { useState, useContext } from 'react'
 import { Input, Form, Modal, Button, ConfigProvider, Typography } from 'antd'
 import { MdOutlineDeleteForever, MdPlaylistAdd } from 'react-icons/md'
 import { ButtonProps } from 'antd/es/button/button'
-import { FollowUpContext } from '../../../config/context'
+import { FormActionContext } from '../../../config/context'
 
 const { Title } = Typography
 
@@ -12,7 +12,7 @@ const okButtonProps: ButtonProps = {
 }
 
 const IncludeProcess = () => {
-  const { setLoading, setRenderTable, setRenderResult, setResult } = useContext(FollowUpContext)
+  const { setLoading, setRenderTable, setRenderResult, setResult } = useContext(FormActionContext)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [processNumber, setProcessNumber] = useState('')
 
@@ -23,7 +23,14 @@ const IncludeProcess = () => {
   }
 
   const handleOk = () => {
-    setIsModalOpen(false)
+    setRenderResult(false)
+    setRenderTable(false)
+    setLoading(true)
+    setTimeout(() => {
+      setLoading(false)
+      setResult({ success: true, message: 'Processo excluído com sucesso!' })
+      setRenderResult(true)
+    }, 3000)
   }
 
   const handleCancel = () => {
@@ -37,6 +44,7 @@ const IncludeProcess = () => {
   }
 
   const handleIncludeProcess = () => {
+    setRenderResult(false)
     setRenderTable(false)
     setLoading(true)
     setTimeout(() => {

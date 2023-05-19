@@ -1,12 +1,12 @@
 import { useContext } from 'react'
 import { MdCheckCircle } from "react-icons/md";
-import { FollowUpContext } from '../../config/context'
+import { FormActionContext } from '../../config/context'
 import { Typography } from "antd";
 
 const { Title } = Typography
 
 const Result = () => {
-    const { result } = useContext(FollowUpContext)
+    const { result } = useContext(FormActionContext)
 
     return (
         <div className="result-box">

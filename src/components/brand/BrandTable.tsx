@@ -2,13 +2,13 @@ import {Table} from "antd";
 import { brandTableColumns } from "../../config/data.tsx";
 import PreTable from "../PreTable.tsx";
 import {useContext} from "react";
-import {BrandContext} from "../../config/context.tsx";
+import {FormActionContext} from "../../config/context.tsx";
 import Column from "antd/es/table/Column";
 import { badgeTypes } from "../../config/data.tsx";
 
 
 const BrandTable = () => {
-    const { tableData } = useContext(BrandContext)
+    const { tableData } = useContext(FormActionContext)
 
   return (
       <div className="table-wrapper">
