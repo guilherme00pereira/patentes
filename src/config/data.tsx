@@ -8,13 +8,15 @@ import DistanceSection from "../components/brand/sections/DistanceSection.tsx";
 import IncludeProcess from "../components/followup/sections/IncludeProcess.tsx";
 import ProcessSearch from "../components/followup/sections/ProcessSearch.tsx";
 import FollowingProcess from "../components/followup/sections/FollowingProcess.tsx";
+import SearchButton from "../components/brand/form/SearchButton.tsx";
+import React from "react";
 
 
 export const brandMenuItems: TabsProps['items'] = [
   {
     key: '1',
     label: `Simples`,
-    children: <GeneralSection/>,
+    children: <GeneralSection button={<SearchButton showText source='g' />}/>,
   },
   {
     key: '2',
@@ -29,12 +31,12 @@ export const brandMenuItems: TabsProps['items'] = [
   {
     key: '4',
     label: `Relatório`,
-    children: <GeneralSection/>,
+    children: <GeneralSection button={<SearchButton showText source='e' />}/>,
   },
   {
     key: '5',
     label: `Inteligência Artificial`,
-    children: <GeneralSection/>,
+    children: <GeneralSection button={<SearchButton showText source='i' />}/>,
   },
 ];
 

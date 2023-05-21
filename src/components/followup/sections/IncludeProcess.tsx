@@ -15,6 +15,7 @@ const IncludeProcess = () => {
   const { setLoading, setRenderTable, setRenderResult, setResult } = useContext(FormActionContext)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [processNumber, setProcessNumber] = useState('')
+  const [form] = Form.useForm()
 
   const showModal = () => {
     setRenderTable(false)
@@ -23,6 +24,7 @@ const IncludeProcess = () => {
   }
 
   const handleOk = () => {
+    setIsModalOpen(false)
     setRenderResult(false)
     setRenderTable(false)
     setLoading(true)
@@ -44,21 +46,29 @@ const IncludeProcess = () => {
   }
 
   const handleIncludeProcess = () => {
-    setRenderResult(false)
-    setRenderTable(false)
-    setLoading(true)
-    setTimeout(() => {
-      setLoading(false)
-      setResult({ success: true, message: 'Processo incluído com sucesso!' })
-      setRenderResult(true)
-    }, 3000)
+    form.validateFields().then((values) => {
+      console.log(values)
+      setRenderResult(false)
+      setRenderTable(false)
+      setLoading(true)
+      setTimeout(() => {
+        setLoading(false)
+        setResult({success: true, message: 'Processo incluído com sucesso!'})
+        setRenderResult(true)
+      }, 3000)
+    })
   }
 
   return (
     <div className="include-process">
       <div>
-        <Form layout="vertical">
-          <Form.Item name="incexcprocess" label="Incluir/Excluir processo" colon={false}>
+        <Form form={form} layout="vertical">
+          <Form.Item
+            name="incexcprocess"
+            label="Incluir/Excluir processo"
+            colon={false}
+            rules={[{ required: true, message: 'Por favor, insira o número do processo' }]}
+          >
             <Input
               value={processNumber}
               size="large"

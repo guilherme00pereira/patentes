@@ -216,6 +216,6 @@ label {
 
 @media screen and (max-width: 1024px) {
     .multiple-terms-box-input {
-        width: 120px;
+        width: 120px !important;
     }
 }

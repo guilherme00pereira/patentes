@@ -3,10 +3,8 @@ import {brandMenuItems} from "../../config/data.tsx";
 import {useContext} from "react";
 import {FormActionContext} from "../../config/context.tsx";
 
-
-
 const BrandSearchMenu = () => {
-  const {setBlank, setLoading, setRenderTable} = useContext(FormActionContext);
+  const { setRenderTable, setTableData, setBlank, setRenderResult, setResult, setLoading } = useContext(FormActionContext)
 
   const onChange = (activeKey: string) => {
     if (activeKey === '4' || activeKey === '5') {
@@ -14,8 +12,11 @@ const BrandSearchMenu = () => {
     } else {
       setRenderTable(true);
     }
-    setLoading(false);
-    setBlank(true);
+    setTableData([])
+    setBlank(true)
+    setRenderResult(false)
+    setResult({success: false, message: ''})
+    setLoading(false)
   }
 
   return (

@@ -27,5 +27,4 @@ export const FormActionContext = createContext<{
     loading: false,
     blank: true,
     renderResult: false
-})
-
+});

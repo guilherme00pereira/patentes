@@ -1,18 +1,26 @@
-import {useEffect, useState} from 'react'
+import {useContext, useEffect, useState} from 'react'
 import { Layout } from 'antd'
 import { siderTheme } from '../config/theme.ts'
 import { ConfigProvider, Menu } from 'antd'
 import { MdOutlineSearch, MdOutlineDescription, MdOutlineLogout } from 'react-icons/md'
 import { Link, useLocation } from 'react-router-dom'
+import {FormActionContext} from "../config/context.tsx";
 
 const { Sider } = Layout
 
 const Sidebar = () => {
+    const { setRenderTable, setTableData, setBlank, setRenderResult, setResult, setLoading } = useContext(FormActionContext)
   const [collapsed, setCollapsed] = useState(true)
     const [selectedKey, setSelectedKey] = useState('')
     const location = useLocation()
 
     useEffect(() => {
+        setTableData([])
+        setBlank(true)
+        setRenderResult(false)
+        setResult({success: false, message: ''})
+        setLoading(false)
+        setRenderTable(false)
         location.pathname === '/acompanhamento-de-processos' ? setSelectedKey('ap') : setSelectedKey('bm')
     }, [location])
 

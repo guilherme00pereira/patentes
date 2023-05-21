@@ -8,7 +8,7 @@ import SearchButton from "../form/SearchButton.tsx";
 const DistanceSection = () => {
   return (
     <div style={{padding: "20px"}}>
-      <Form layout="inline" style={{alignItems: "end"}}>
+      <Form layout="inline" requiredMark="optional" style={{alignItems: "end"}}>
       <Form.Item
           name="termo"
           label="Termo"
