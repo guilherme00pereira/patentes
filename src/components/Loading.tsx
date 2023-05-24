@@ -5,10 +5,10 @@ const { Title } = Typography;
 
 const LoadingSpinner = <Loading3QuartersOutlined style={{ fontSize: 64, color: "#080C66" }} spin />;
 
-const Loading = () => {
+const Loading = ({showText}: {showText: boolean}) => {
     return (
         <div className="loading">
-            <Title level={3}>Buscando resultados</Title>
+            {showText && <Title level={3}>Buscando resultados</Title>}
             <Spin indicator={LoadingSpinner}/>
         </div>
     );

@@ -21,7 +21,6 @@ const DistanceDropdown = () => {
   return (
     <ConfigProvider theme={selectTheme}>
       <Select
-        mode="multiple"
         allowClear
         size="large"
         style={{ width: '200px' }}

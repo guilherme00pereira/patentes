@@ -182,10 +182,6 @@ label {
     justify-content: center;
 }
 
-.multiple-terms-box-input {
-    width: 180px;
-}
-
 .multiple-terms-box div {
     margin: 2px 0 2px 2px;
 }
@@ -213,9 +209,3 @@ label {
     font-size: 48px
 }
 
-
-@media screen and (max-width: 1024px) {
-    .multiple-terms-box-input {
-        width: 120px !important;
-    }
-}

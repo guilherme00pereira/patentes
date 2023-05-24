@@ -17,6 +17,7 @@ const Layout = () => {
   const [renderResult, setRenderResult] = useState(false)
   const [result, setResult] = useState<resultType>({ success: false, message: '' })
   const [loading, setLoading] = useState(false)
+  const [loadingText, showLoadingText] = useState(false)
 
   return (
     <ConfigProvider theme={{ token: { fontFamily: 'Barlow' } }}>
@@ -35,6 +36,8 @@ const Layout = () => {
             loading,
             blank,
             renderResult,
+            loadingText,
+            showLoadingText
           }}
         >
           <IconContext.Provider value={{ size: '1.25em' }}>

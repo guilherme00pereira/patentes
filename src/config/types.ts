@@ -28,6 +28,19 @@ export type GeneralSearchParams = {
   situacao: string;
 }
 
+export type RadicalSearchParams = {
+  termo: string[];
+  classe: string;
+  situacao: string;
+}
+
+export type DistanceSearchParams = {
+  termo: string;
+  classe: string;
+  situacao: string;
+  distance: string;
+}
+
 export type PreTableParams = {
   total: number;
   columns: IExcelColumn[];

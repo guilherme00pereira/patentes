@@ -6,13 +6,13 @@ import { FormActionContext } from '../config/context.tsx'
 import Loading from '../components/Loading.tsx'
 
 const BrandSearch = () => {
-  const { loading, blank, renderTable } = useContext(FormActionContext)
+  const { loading, blank, result, renderTable } = useContext(FormActionContext)
 
   const renderSection = () => {
     if (blank) {
       return <div></div>
     } else {
-      return renderTable ? <BrandTable /> : <div>Relatório</div>
+      return renderTable ? <BrandTable /> : <div style={{paddingTop: "24px"}}>{result.message}</div>
     }
   }
 
@@ -21,7 +21,7 @@ const BrandSearch = () => {
       <div className="main-container">
         <HeaderSection title="Busca de marcas" />
         <BrandSearchMenu />
-        {loading ? <Loading /> : renderSection()}
+        {loading ? <Loading showText={true} /> : renderSection()}
       </div>
     
   )

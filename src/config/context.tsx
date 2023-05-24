@@ -13,7 +13,9 @@ export const FormActionContext = createContext<{
     result: resultType,
     loading: boolean,
     blank: boolean,
-    renderResult: boolean
+    renderResult: boolean,
+    loadingText: boolean,
+    showLoadingText: (newValue: boolean) => void,
 }>({
     setRenderTable: () => undefined,
     setLoading: () => undefined,
@@ -26,5 +28,7 @@ export const FormActionContext = createContext<{
     result: {success: false, message: ''},
     loading: false,
     blank: true,
-    renderResult: false
+    renderResult: false,
+    loadingText: false,
+    showLoadingText: () => undefined,
 });

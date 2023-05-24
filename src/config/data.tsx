@@ -59,12 +59,19 @@ export const followupMenuItems: TabsProps['items'] = [
 ];
 
 export const selectOptions: SelectProps['options'] = [
-  {value: 'td', label: 'Todos'},
-  {value: 'pa', label: 'Pedidos Ativos'},
-  {value: 'pe', label: 'Pedidos Extintos/Arquivados'},
+  {value: '1', label: 'Todos'},
+  {value: '2', label: 'Pedidos Ativos'},
+  {value: '3', label: 'Pedidos Extintos/Arquivados'},
 ]
 
-const createSelectClassOptions: SelectProps['options'] = [{value: '0', label: 'Todos'}]
+
+
+const createSelectClassOptions: SelectProps['options'] = [
+  {
+    value: Array.from(Array(45).keys()).map((i) => i + 1).toString(), 
+    label: 'Todos'
+  }
+]
 
 export const selectClassOptions = () => {
   for (let i = 1; i <= 45; i++) {

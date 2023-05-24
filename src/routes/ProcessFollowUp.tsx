@@ -7,14 +7,14 @@ import { useContext } from 'react'
 import { FormActionContext } from '../config/context.tsx'
 
 const ProcessFollowUp = () => {
-  const { blank, loading, renderTable, renderResult } = useContext(FormActionContext)
+  const { blank, loading, renderTable, renderResult, loadingText } = useContext(FormActionContext)
 
   return (
     <div className="main-container">
       <HeaderSection title="Acompanhamento de processos" />
       <FollowUpMenu />
       {blank && <div className="blank"></div>}
-      {loading && <Loading />}
+      {loading && <Loading showText={loadingText} />}
       {renderTable && <FollowUpTable />}
       {renderResult && <Result />}
     </div>

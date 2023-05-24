@@ -1,4 +1,4 @@
-import React, { useState, useContext } from 'react'
+import React, { useState, useContext, useEffect } from 'react'
 import { Input, Form, Modal, Button, ConfigProvider, Typography } from 'antd'
 import { MdOutlineDeleteForever, MdPlaylistAdd } from 'react-icons/md'
 import { ButtonProps } from 'antd/es/button/button'
@@ -12,15 +12,18 @@ const okButtonProps: ButtonProps = {
 }
 
 const IncludeProcess = () => {
-  const { setLoading, setRenderTable, setRenderResult, setResult } = useContext(FormActionContext)
+  const { setLoading, setRenderTable, setRenderResult, setResult, showLoadingText } = useContext(FormActionContext)
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [processNumber, setProcessNumber] = useState('')
   const [form] = Form.useForm()
 
   const showModal = () => {
+    showLoadingText(false)
+    form.validateFields().then(() => {
     setRenderTable(false)
     setLoading(false)
     setIsModalOpen(true)
+    })
   }
 
   const handleOk = () => {
@@ -46,6 +49,7 @@ const IncludeProcess = () => {
   }
 
   const handleIncludeProcess = () => {
+    showLoadingText(false)
     form.validateFields().then((values) => {
       console.log(values)
       setRenderResult(false)
@@ -58,6 +62,10 @@ const IncludeProcess = () => {
       }, 3000)
     })
   }
+
+  useEffect(() => {
+    showLoadingText(false)
+  }, [])
 
   return (
     <div className="include-process">
