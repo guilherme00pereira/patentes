@@ -31,6 +31,10 @@
     background-color: #080C66 !important;
 }
 
+.sidebar-menu-item {
+    margin: 32px 0 !important;
+}
+
 label {
     color: #080C66 !important;
     font-weight: bold;

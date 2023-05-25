@@ -7,6 +7,7 @@ import { IconContext } from 'react-icons'
 import '@fontsource/barlow'
 import { FormActionContext } from '../config/context.tsx'
 import { BrandTableData, resultType } from '../config/types.ts'
+import ptBR from 'antd/lib/locale/pt_BR'
 
 const { Content } = Container
 
@@ -43,7 +44,7 @@ const Layout = () => {
           <IconContext.Provider value={{ size: '1.25em' }}>
             <Sidebar />
             <Container>
-              <ConfigProvider theme={contentTheme}>
+              <ConfigProvider theme={contentTheme} locale={ptBR}>
                 <Content style={{ paddingLeft: '80px', backgroundColor: 'white' }}>
                   <Outlet />
                 </Content>

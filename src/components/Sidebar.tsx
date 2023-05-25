@@ -30,7 +30,7 @@ const Sidebar = () => {
         collapsible
         collapsed={collapsed}
         trigger={null}
-        width={256}
+        width={340}
         onMouseOver={() => setCollapsed(false)}
         onMouseOut={() => setCollapsed(true)}
         style={{
@@ -49,14 +49,14 @@ const Sidebar = () => {
             <Menu.Item
               key="bm"
               icon={<MdOutlineSearch/>}
-              style={{ margin: '32px 0', height: '40px' }}
+              className="sidebar-menu-item"
             >
               <Link to="/">Busca de Marcas</Link>
             </Menu.Item>
             <Menu.Item
               key="ap"
               icon={<MdOutlineDescription/>}
-              style={{ margin: '32px 0', height: '40px' }}
+              className="sidebar-menu-item"
             >
               <Link to="acompanhamento-de-processos">Acompanhamento de Processos</Link>
             </Menu.Item>
@@ -65,7 +65,7 @@ const Sidebar = () => {
                 <Menu.Item
                     key="lo"
                     icon={<MdOutlineLogout/>}
-                    style={{ margin: '32px 0', height: '40px' }}
+                    className="sidebar-menu-item"
                 >
                     <Link to="logout">Sair</Link>
                 </Menu.Item>

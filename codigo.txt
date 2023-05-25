@@ -1,26 +1,3 @@
-// fetch('./appleads.json')
-    //   .then((res) => {
-    //     return res.json()
-    //   })
-    //   .then((data) => {
-    //     Object.entries(data.body).forEach((item: any, index: number) => {
-    //       tableData.push({
-    //         id: index.toString(),
-    //         class: item[1].classe_nice_codigo,
-    //         process: item[1].processo_numero,
-    //         brand: item[1].marca_apresentacao,
-    //         presentation: item[1].marca_apresentacao,
-    //         situation: item[1].situacao,
-    //         name: item[1].nome,
-    //         activities: '',
-    //         country: item[1].titular_pais,
-    //         state: item[1].titular_uf,
-    //       })
-    //     })
-    //     setTableData([...tableData])
-    //   })
-
-
 https://396104363925.signin.aws.amazon.com/console
 login: Guilherme
 senha: Admin123456@
