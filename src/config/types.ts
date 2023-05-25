@@ -5,22 +5,16 @@ export type BrandTableData = {
   class: string;
   process: string;
   brand: string;
-  presentation: string;
-  situation: string;
-  name: string;
-  activities: string;
-  country: string;
-  state: string;
+  presentation?: string;
+  situation?: string;
+  name?: string;
+  activities?: string;
+  country?: string;
+  state?: string;
+  rpi?: string
+  dataRpi?: string
 }
 
-export type FollowTableData = {
-  id: string
-  processo: string
-  marca: number
-  rpi: string
-  dataRpi: string
-  complemento: string
-}
 
 export type GeneralSearchParams = {
   termo: string;

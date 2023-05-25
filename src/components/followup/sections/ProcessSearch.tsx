@@ -2,25 +2,58 @@ import React, { useState, useContext, useEffect } from 'react'
 import { Input, Form, Button, ConfigProvider } from 'antd'
 import { MdOutlineSearch } from 'react-icons/md'
 import { FormActionContext } from '../../../config/context.tsx'
+import { getSearchProcess } from '../../../lib/apiClient.ts'
+import { BrandTableData } from '../../../config/types.ts'
 
 const ProcessSearch = () => {
-  const { setLoading, setBlank, showLoadingText } = useContext(FormActionContext)
+  const { setLoading, setBlank, showLoadingText, setTableData, setRenderTable } = useContext(FormActionContext)
   const [processNumber, setProcessNumber] = useState('')
   const [form] = Form.useForm()
 
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>) => {
     const numbers = e.target.value.replace(/\D/g, '')
-    console.log(numbers)
     setProcessNumber(numbers)
   }
 
   const submitHandler = () => {
+    const tableData: BrandTableData[] = []
     showLoadingText(true)
-    form.validateFields().then((values) => {
-    setLoading(true)
-    setBlank(false)
-    console.log('buscar processo')
-    })
+    form
+      .validateFields()
+      .then((values) => {
+        setLoading(true)
+        setBlank(false)
+        console.log(values)
+        getSearchProcess(values.searchprocess)
+          .then((data) => {
+            console.log(data)
+            Object.entries(data.body).forEach((item: any, index: number) => {
+              tableData.push({
+                id: index.toString(),
+                process: item[1].processo,
+                brand: item[1].marca,
+                class: item[1].classe,
+                rpi: item[1].movimento,
+                dataRpi: item[1].dt_movimento,
+              })
+            })
+            setTableData([...tableData])
+          })
+          .catch((err) => {
+            console.log(err)
+          })
+          .finally(() => {
+            setLoading(false)
+            setRenderTable(true)
+            setBlank(false)
+          })
+      })
+      .catch((err) => {
+        setLoading(false)
+        setRenderTable(false)
+        setBlank(true)
+        console.log(err)
+      })
   }
 
   useEffect(() => {

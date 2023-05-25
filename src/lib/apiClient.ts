@@ -53,8 +53,8 @@ export const postExcludeProcess = async (params: any) => {
     return response.data;
 }
 
-export const getSearchProcess = async (process: string) => {
-    let url = baseUrl.replace('<code>', '1nfu4zrkj8') + `?processo=${process}`
+export const getSearchProcess = async (searchprocess: string) => {
+    let url = baseUrl.replace('<code>', '1nfu4zrkj8') + `?processo=${searchprocess}`
     const response = await axios.get(url, {headers: {'Content-Type': 'application/json'}});
     return response.data;
 }

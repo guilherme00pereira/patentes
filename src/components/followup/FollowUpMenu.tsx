@@ -13,7 +13,6 @@ const { setRenderTable, setTableData, setBlank, setRenderResult, setResult, setL
     setRenderResult(false)
     setResult({success: false, message: ''})
     setLoading(false)
-    console.log('change')
   }
 
   return (

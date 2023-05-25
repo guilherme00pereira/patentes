@@ -126,11 +126,15 @@ export const brandTableColumns: columnType[] = [
 export const followTableColumns: columnType[] = [
   {
     title: 'Processo',
-    dataIndex: 'processo',
+    dataIndex: 'process',
   },
   {
     title: 'Marca',
-    dataIndex: 'marca',
+    dataIndex: 'brand',
+  },
+  {
+    title: 'Classe',
+    dataIndex: 'class',
   },
   {
     title: 'RPI',
@@ -139,10 +143,6 @@ export const followTableColumns: columnType[] = [
   {
     title: 'Data RPI',
     dataIndex: 'dataRpi',
-  },
-  {
-    title: 'Complemento',
-    dataIndex: 'complemento',
   },
 ]
 
