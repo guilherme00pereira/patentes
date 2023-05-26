@@ -34,7 +34,10 @@
 .auth-card {
     padding: 20px;
     background-color: white;
+    width: 400px;
+    display: flex;
 }
+
 
 .sidebar-menu-item {
     margin: 32px 0 !important;

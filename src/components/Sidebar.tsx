@@ -1,10 +1,11 @@
 import {useContext, useEffect, useState} from 'react'
-import { Layout } from 'antd'
+import { Layout, Button } from 'antd'
 import { siderTheme } from '../config/theme.ts'
 import { ConfigProvider, Menu } from 'antd'
 import { MdOutlineSearch, MdOutlineDescription, MdOutlineLogout } from 'react-icons/md'
 import { Link, useLocation } from 'react-router-dom'
 import {FormActionContext} from "../config/context.tsx";
+import { useAuth } from '../hooks/useAuth.tsx'
 
 const { Sider } = Layout
 
@@ -13,6 +14,8 @@ const Sidebar = () => {
   const [collapsed, setCollapsed] = useState(true)
     const [selectedKey, setSelectedKey] = useState('')
     const location = useLocation()
+
+    const auth = useAuth()
 
     useEffect(() => {
         setTableData([])
@@ -67,7 +70,10 @@ const Sidebar = () => {
                     icon={<MdOutlineLogout/>}
                     className="sidebar-menu-item"
                 >
-                    <Link to="#">Sair</Link>
+                    <Button 
+                      type='text' 
+                      style={{color: 'rgb(255, 255, 255, 0.65)'}}
+                      onClick={() => auth.signOut()}>Sair</Button>
                 </Menu.Item>
             </Menu>
         </div>

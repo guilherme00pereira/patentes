@@ -1,6 +1,6 @@
 import { useState } from 'react'
 import { ConfigProvider, Layout as Container } from 'antd'
-import { Outlet } from 'react-router-dom'
+import { Outlet, useNavigate } from 'react-router-dom'
 import { contentTheme } from '../config/theme.ts'
 import Sidebar from '../components/Sidebar.tsx'
 import { IconContext } from 'react-icons'
@@ -8,6 +8,7 @@ import '@fontsource/barlow'
 import { FormActionContext } from '../config/context.tsx'
 import { BrandTableData, resultType } from '../config/types.ts'
 import ptBR from 'antd/lib/locale/pt_BR'
+import { useAuth } from '../hooks/useAuth.tsx'
 
 const { Content } = Container
 
@@ -19,6 +20,13 @@ const Layout = () => {
   const [result, setResult] = useState<resultType>({ success: false, message: '' })
   const [loading, setLoading] = useState(false)
   const [loadingText, showLoadingText] = useState(false)
+  const navigate = useNavigate()
+
+  const auth = useAuth()
+
+  if(!auth.isAuthenticated) {
+    return navigate('/')
+  }
 
   return (
       <ConfigProvider theme={{ token: { fontFamily: 'Barlow' } }}>

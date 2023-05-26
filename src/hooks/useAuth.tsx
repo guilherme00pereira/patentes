@@ -14,6 +14,7 @@ interface UseAuth {
   isLoading: boolean;
   isAuthenticated: boolean;
   username: string;
+  avatar: string;
   signIn: (username: string, password: string) => Promise<Result>;
   signOut: () => void;
 }
@@ -42,16 +43,19 @@ const useProvideAuth = (): UseAuth => {
   const [isLoading, setIsLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [username, setUsername] = useState("");
+  const [avatar, setAvatar] = useState("");
 
   useEffect(() => {
     Auth.currentAuthenticatedUser()
       .then((result) => {
         setUsername(result.username);
+        setAvatar(result.attributes.picture)
         setIsAuthenticated(true);
         setIsLoading(false);
       })
       .catch(() => {
         setUsername("");
+        setAvatar("");
         setIsAuthenticated(false);
         setIsLoading(false);
       });
@@ -89,6 +93,7 @@ const useProvideAuth = (): UseAuth => {
     isLoading,
     isAuthenticated,
     username,
+    avatar,
     signIn,
     signOut,
   };
