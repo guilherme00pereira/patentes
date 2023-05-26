@@ -5,6 +5,8 @@ const baseUrl = 'https://<code>.execute-api.us-east-1.amazonaws.com/teste/applea
 
 export enum SearchType {
     SIMPLE = 'simple',
+    RADICAL = 'radical',
+    DISTANCE = 'distance',
     REPORT = 'report',
     IA = 'ia',
 }
@@ -42,25 +44,25 @@ export const getDistanceSearch = async (params: DistanceSearchParams) => {
 }
 
 export const postIncludeProcess = async (params: any) => {
-    let url = baseUrl.replace('<code>', 'lof8gj8bwk')
+    const url = baseUrl.replace('<code>', 'lof8gj8bwk')
     const response = await axios.post(url, params, {headers: {'Content-Type': 'application/json'}});
     return response.data;
 }
 
 export const postExcludeProcess = async (params: any) => {
-    let url = baseUrl.replace('<code>', 'exkeir5z25')
+    const url = baseUrl.replace('<code>', 'exkeir5z25')
     const response = await axios.post(url, params, {headers: {'Content-Type': 'application/json'}});
     return response.data;
 }
 
 export const getSearchProcess = async (searchprocess: string) => {
-    let url = baseUrl.replace('<code>', '1nfu4zrkj8') + `?processo=${searchprocess}`
+    const url = baseUrl.replace('<code>', '1nfu4zrkj8') + `?processo=${searchprocess}`
     const response = await axios.get(url, {headers: {'Content-Type': 'application/json'}});
     return response.data;
 }
 
-export const getFololowUpProcess = async (mail: string, process: string) => {
-    let url = baseUrl.replace('<code>', 'go3acergu1') + `?processo=${process}&usuario=${mail}`
+export const getFololowUpProcess = async (mail: string) => {
+    const url = baseUrl.replace('<code>', 'go3acergu1') + `?usuario=${mail}`
     const response = await axios.get(url, {headers: {'Content-Type': 'application/json'}});
     return response.data;
 }

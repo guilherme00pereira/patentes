@@ -11,16 +11,29 @@ import {
 } from '../../../lib/apiClient.ts'
 
 const SearchButton = ({ showText, source }: { showText?: boolean; source: string }) => {
-  const { setLoading, setBlank, setTableData, setRenderTable, setResult, setRenderResult } = useContext(FormActionContext)
+  const { setLoading, setBlank, setTableData, setRenderTable, setResult, setRenderResult } =
+    useContext(FormActionContext)
   const form = Form.useFormInstance()
 
-  const searchSimple = () => {
+  const searchApi = (type: SearchType) => {
     const tableData: BrandTableData[] = []
     form
       .validateFields()
       .then((params) => {
-        getGeneralSearch({ ...params }, SearchType.SIMPLE)
-          .then((data) => {
+        let result: any = null
+        switch (type) {
+          case SearchType.SIMPLE:
+            result = getGeneralSearch({ ...params }, type);
+            break;
+          case SearchType.RADICAL:
+            result = getRadicalSearch({ ...params });
+            break;
+          case SearchType.DISTANCE:
+            result = getDistanceSearch({ ...params });
+            break;
+        }
+        if(result) {
+        result.then((data: any) => {
             Object.entries(data.body).forEach((item: any, index: number) => {
               tableData.push({
                 id: index.toString(),
@@ -37,14 +50,20 @@ const SearchButton = ({ showText, source }: { showText?: boolean; source: string
             })
             setTableData([...tableData])
           })
-          .catch((err) => {
+          .catch((err: any) => {
             console.log(err)
           })
           .finally(() => {
             setLoading(false)
             setRenderTable(true)
             setBlank(false)
-          })
+          })} else {
+          setLoading(false)
+          setRenderTable(false)
+          setBlank(false)
+          setRenderResult(true)
+          setResult({ success: false, message: 'Nao foi possivel retornar dados da api.' })
+        }
       })
       .catch((err) => {
         setLoading(false)
@@ -54,55 +73,7 @@ const SearchButton = ({ showText, source }: { showText?: boolean; source: string
       })
   }
 
-  const searchRadical = () => {
-    form
-      .validateFields()
-      .then((params) => {
-        getRadicalSearch({ ...params })
-          .then((data) => {
-            console.log(data)
-          })
-          .catch((err) => {
-            console.log(err)
-          })
-          .finally(() => {
-            setLoading(false)
-            setRenderTable(true)
-            setBlank(false)
-          })
-      })
-      .catch((err) => {
-        setLoading(false)
-        setRenderTable(false)
-        setBlank(true)
-        console.log(err)
-      })
-  }
 
-  const searchDistance = () => {
-    form
-      .validateFields()
-      .then((params) => {
-        getDistanceSearch({ ...params })
-          .then((data) => {
-            console.log(data)
-          })
-          .catch((err) => {
-            console.log(err)
-          })
-          .finally(() => {
-            setLoading(false)
-            setRenderTable(true)
-            setBlank(false)
-          })
-      })
-      .catch((err) => {
-        setLoading(false)
-        setRenderTable(false)
-        setBlank(true)
-        console.log(err)
-      })
-  }
 
   const searchText = (type: SearchType) => {
     form
@@ -111,7 +82,7 @@ const SearchButton = ({ showText, source }: { showText?: boolean; source: string
         getGeneralSearch({ ...params }, type)
           .then((data) => {
             setRenderResult(true)
-            setResult({success: true, message: data.body})
+            setResult({ success: true, message: data.body })
           })
           .catch((err) => {
             console.log(err)
@@ -130,17 +101,15 @@ const SearchButton = ({ showText, source }: { showText?: boolean; source: string
       })
   }
 
-  
-
   const submitHandler = () => {
     setRenderTable(false)
     setLoading(true)
     if (source === 'g') {
-      searchSimple()
+      searchApi(SearchType.SIMPLE)
     } else if (source === 'r') {
-      searchRadical()
+      searchApi(SearchType.RADICAL)
     } else if (source === 'd') {
-      searchDistance()
+      searchApi(SearchType.DISTANCE)
     } else if (source === 'e') {
       searchText(SearchType.REPORT)
     } else if (source === 'i') {

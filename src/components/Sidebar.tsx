@@ -67,7 +67,7 @@ const Sidebar = () => {
                     icon={<MdOutlineLogout/>}
                     className="sidebar-menu-item"
                 >
-                    <Link to="logout">Sair</Link>
+                    <Link to="#">Sair</Link>
                 </Menu.Item>
             </Menu>
         </div>

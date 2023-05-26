@@ -1,4 +1,5 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom";
+import Auth from "./routes/Auth.tsx";
 import Layout from "./routes/Layout.tsx";
 import BrandSearch from "./routes/BrandSearch.tsx";
 import ProcessFollowUp from "./routes/ProcessFollowUp.tsx";
@@ -7,6 +8,10 @@ import 'antd/dist/reset.css';
 const router = createBrowserRouter([
   {
     path: "/",
+    element: <Auth />,
+  },
+  {
+    path: "/painel",
     element: <Layout />,
     children: [
       {

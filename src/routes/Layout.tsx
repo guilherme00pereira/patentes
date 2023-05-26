@@ -21,39 +21,39 @@ const Layout = () => {
   const [loadingText, showLoadingText] = useState(false)
 
   return (
-    <ConfigProvider theme={{ token: { fontFamily: 'Barlow' } }}>
-      <Container style={{ minHeight: '100vh' }}>
-        <FormActionContext.Provider
-          value={{
-            setRenderTable,
-            setLoading,
-            setBlank,
-            setRenderResult,
-            setResult,
-            tableData,
-            setTableData,
-            renderTable,
-            result,
-            loading,
-            blank,
-            renderResult,
-            loadingText,
-            showLoadingText
-          }}
-        >
-          <IconContext.Provider value={{ size: '1.25em' }}>
-            <Sidebar />
-            <Container>
-              <ConfigProvider theme={contentTheme} locale={ptBR}>
-                <Content style={{ paddingLeft: '80px', backgroundColor: 'white' }}>
-                  <Outlet />
-                </Content>
-              </ConfigProvider>
-            </Container>
-          </IconContext.Provider>
-        </FormActionContext.Provider>
-      </Container>
-    </ConfigProvider>
+      <ConfigProvider theme={{ token: { fontFamily: 'Barlow' } }}>
+        <Container style={{ minHeight: '100vh' }}>
+          <FormActionContext.Provider
+            value={{
+              setRenderTable,
+              setLoading,
+              setBlank,
+              setRenderResult,
+              setResult,
+              tableData,
+              setTableData,
+              renderTable,
+              result,
+              loading,
+              blank,
+              renderResult,
+              loadingText,
+              showLoadingText,
+            }}
+          >
+            <IconContext.Provider value={{ size: '1.25em' }}>
+              <Sidebar />
+              <Container>
+                <ConfigProvider theme={contentTheme} locale={ptBR}>
+                  <Content style={{ paddingLeft: '80px', backgroundColor: 'white' }}>
+                    <Outlet />
+                  </Content>
+                </ConfigProvider>
+              </Container>
+            </IconContext.Provider>
+          </FormActionContext.Provider>
+        </Container>
+      </ConfigProvider>
   )
 }
 

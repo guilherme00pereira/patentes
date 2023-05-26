@@ -1,5 +1,5 @@
 import type {SelectProps} from 'antd'
-import {columnType, FollowTableData} from './types'
+import {columnType} from './types'
 import {TabsProps} from "antd";
 import { MdHourglassBottom, MdClose, MdCheck } from 'react-icons/md';
 import GeneralSection from "../components/brand/sections/GeneralSection.tsx";
@@ -146,32 +146,6 @@ export const followTableColumns: columnType[] = [
   },
 ]
 
-export const followTableData: FollowTableData[] = [
-  {
-    id: '1',
-    processo: 'John Brown',
-    marca: 32,
-    rpi: 'New York No. 1 Lake Park',
-    dataRpi: 'New York No. 1 Lake Park',
-    complemento: 'New York No. 1 Lake Park',
-  },
-  {
-    id: '2',
-    processo: 'Jim Green',
-    marca: 42,
-    rpi: 'London No. 1 Lake Park',
-    dataRpi: 'London No. 1 Lake Park',
-    complemento: 'London No. 1 Lake Park',
-  },
-  {
-    id: '3',
-    processo: 'Joe Black',
-    marca: 32,
-    rpi: 'Sydney No. 1 Lake Park',
-    dataRpi: 'Sydney No. 1 Lake Park',
-    complemento: 'Sydney No. 1 Lake Park',
-  }
-]
 export const exportSelect: Array<object> = [
   {value: 'pdf', label: '.pdf'},
   {value: 'xlsx', label: '.xlsx'},
