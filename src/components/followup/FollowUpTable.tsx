@@ -1,7 +1,7 @@
 import {Table} from "antd";
 import {useContext} from "react";
 import {FormActionContext} from "../../config/context.tsx";
-import { followTableColumns, followTableData } from "../../config/data.tsx";
+import { followTableColumns } from "../../config/data.tsx";
 import PreTable from "../PreTable.tsx";
 
 const FollowUpTable = () => {

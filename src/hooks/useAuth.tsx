@@ -11,7 +11,6 @@ Amplify.configure({
 })
 
 interface UseAuth {
-  isLoading: boolean;
   isAuthenticated: boolean;
   username: string;
   avatar: string;
@@ -40,7 +39,6 @@ export const useAuth = () => {
 };
 
 const useProvideAuth = (): UseAuth => {
-  const [isLoading, setIsLoading] = useState(true);
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [username, setUsername] = useState("");
   const [avatar, setAvatar] = useState("");
@@ -51,13 +49,11 @@ const useProvideAuth = (): UseAuth => {
         setUsername(result.username);
         setAvatar(result.attributes.picture)
         setIsAuthenticated(true);
-        setIsLoading(false);
       })
       .catch(() => {
         setUsername("");
         setAvatar("");
         setIsAuthenticated(false);
-        setIsLoading(false);
       });
   }, []);
 
@@ -90,7 +86,6 @@ const useProvideAuth = (): UseAuth => {
   };
 
   return {
-    isLoading,
     isAuthenticated,
     username,
     avatar,

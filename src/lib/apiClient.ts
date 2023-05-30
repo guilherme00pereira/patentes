@@ -31,7 +31,16 @@ export const getGeneralSearch = async (params: GeneralSearchParams, type: Search
 
 export const getRadicalSearch = async (params: RadicalSearchParams) => {
     let url = baseUrl.replace('<code>', 'qhmx82lgf3')
-    url += `?termo=${params.termo}&classe=${params.classe.toString()}&situacao=${params.situacao}`
+    url += `?and01=${params.and01}`
+    if(params.and02) url += `&and02=${params.and02}`
+    if(params.and03) url += `&and03=${params.and03}`
+    if(params.and04) url += `&and04=${params.and04}`
+    if(params.and05) url += `&and05=${params.and05}`
+    if(params.and06) url += `&and06=${params.and06}`
+    if(params.not01) url += `&not01=${params.not01}`
+    if(params.not02) url += `&not02=${params.not02}`
+    if(params.not03) url += `&not03=${params.not03}`
+    url += `&classe=${params.classe.toString()}&situacao=${params.situacao}`
     const response = await axios.get(url, {headers: {'Content-Type': 'application/json'}});
     return response.data;
 }

@@ -25,13 +25,25 @@ export const siderTheme = {
   },
 }
 
-export const selectTheme = {
-  token: { 
-    colorPrimary: blue, 
-    colorBgContainer: '#F5F5F5', 
+export const loginTheme = {
+  token: {
+    colorPrimary: orange,
+    fontFamily: 'Barlow',
+    colorBgContainer: '#F5F5F5',
     colorBorder: blue,
     colorText: blue,
     colorTextPlaceholder: blue,
     colorIcon: blue,
-},
+  }
+}
+
+export const selectTheme = {
+  token: {
+    colorPrimary: blue,
+    colorBgContainer: '#F5F5F5',
+    colorBorder: blue,
+    colorText: blue,
+    colorTextPlaceholder: blue,
+    colorIcon: blue,
+  },
 }

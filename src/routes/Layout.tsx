@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import {useEffect, useState} from 'react'
 import { ConfigProvider, Layout as Container } from 'antd'
 import { Outlet, useNavigate } from 'react-router-dom'
 import { contentTheme } from '../config/theme.ts'
@@ -24,9 +24,11 @@ const Layout = () => {
 
   const auth = useAuth()
 
-  if(!auth.isAuthenticated) {
-    return navigate('/')
-  }
+    useEffect(() => {
+        if(!auth.isAuthenticated) {
+            return navigate('/')
+        }
+    }, [])
 
   return (
       <ConfigProvider theme={{ token: { fontFamily: 'Barlow' } }}>

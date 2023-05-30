@@ -72,7 +72,7 @@ const Sidebar = () => {
                 >
                     <Button 
                       type='text' 
-                      style={{color: 'rgb(255, 255, 255, 0.65)'}}
+                      style={{color: 'rgb(255, 255, 255, 0.65)', fontSize: '18px'}}
                       onClick={() => auth.signOut()}>Sair</Button>
                 </Menu.Item>
             </Menu>

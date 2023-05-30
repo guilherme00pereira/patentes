@@ -23,7 +23,15 @@ export type GeneralSearchParams = {
 }
 
 export type RadicalSearchParams = {
-  termo: string[];
+  and01: string;
+  and02?: string;
+  and03?: string;
+  and04?: string;
+  and05?: string;
+  and06?: string;
+  not01?: string;
+  not02?: string;
+  not03?: string;
   classe: string;
   situacao: string;
 }
