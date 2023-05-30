@@ -31,15 +31,15 @@ export const getGeneralSearch = async (params: GeneralSearchParams, type: Search
 
 export const getRadicalSearch = async (params: RadicalSearchParams) => {
     let url = baseUrl.replace('<code>', 'qhmx82lgf3')
-    url += `?and01=${params.and01}`
-    if(params.and02) url += `&and02=${params.and02}`
-    if(params.and03) url += `&and03=${params.and03}`
-    if(params.and04) url += `&and04=${params.and04}`
-    if(params.and05) url += `&and05=${params.and05}`
-    if(params.and06) url += `&and06=${params.and06}`
-    if(params.not01) url += `&not01=${params.not01}`
-    if(params.not02) url += `&not02=${params.not02}`
-    if(params.not03) url += `&not03=${params.not03}`
+    url += `?and1=${params.and1}`
+    if(params.and2) url += `&and2=${params.and2}`
+    if(params.and3) url += `&and3=${params.and3}`
+    if(params.or1) url += `&or1=${params.or1}`
+    if(params.or2) url += `&or2=${params.or2}`
+    if(params.or3) url += `&or3=${params.or3}`
+    if(params.not1) url += `&not1=${params.not1}`
+    if(params.not2) url += `&not2=${params.not2}`
+    if(params.not3) url += `&not3=${params.not3}`
     url += `&classe=${params.classe.toString()}&situacao=${params.situacao}`
     const response = await axios.get(url, {headers: {'Content-Type': 'application/json'}});
     return response.data;

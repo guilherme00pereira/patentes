@@ -3,6 +3,8 @@ import { Select } from 'antd'
 import { Excel } from 'antd-table-saveas-excel'
 import {PreTableParams} from "../config/types.ts";
 
+
+
 const PreTable = (props: PreTableParams) => {
   const handleChange = (value: string) => {
     if (value === 'xlsx') {
@@ -13,7 +15,7 @@ const PreTable = (props: PreTableParams) => {
           .addDataSource(props.dataSource)
         .saveAs('export.xlsx')
     } else {
-        console.log('export to pdf')
+      props.export()
     }
   }
 

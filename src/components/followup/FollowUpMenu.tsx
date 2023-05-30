@@ -27,7 +27,8 @@ const { setRenderTable, setTableData, setBlank, setRenderResult, setResult, setL
                 process: item[1].processo,
                 brand: item[1].marca,
                 class: item[1].classe,
-                rpi: item[1].movimento,
+                complement: item[1].movimento,
+                rpi: "",
                 dataRpi: item[1].dt_movimento,
               })
             })

@@ -66,14 +66,13 @@ export const selectOptions: SelectProps['options'] = [
 
 
 
-const createSelectClassOptions: SelectProps['options'] = [
-  {
-    value: Array.from(Array(45).keys()).map((i) => i + 1).toString(), 
-    label: 'Todos'
-  }
-]
-
 export const selectClassOptions = () => {
+  const createSelectClassOptions: SelectProps['options'] = [
+    {
+      value: Array.from(Array(45).keys()).map((i) => i + 1).toString(), 
+      label: 'Todos'
+    }
+  ]
   for (let i = 1; i <= 45; i++) {
     createSelectClassOptions.push({
       label: i.toString(),
@@ -143,6 +142,10 @@ export const followTableColumns: columnType[] = [
   {
     title: 'Data RPI',
     dataIndex: 'dataRpi',
+  },
+  {
+    title: 'Complemento',
+    dataIndex: 'complement',
   },
 ]
 

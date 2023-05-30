@@ -11,6 +11,7 @@ export type BrandTableData = {
   activities?: string;
   country?: string;
   state?: string;
+  complement?: string;
   rpi?: string
   dataRpi?: string
 }
@@ -23,15 +24,15 @@ export type GeneralSearchParams = {
 }
 
 export type RadicalSearchParams = {
-  and01: string;
-  and02?: string;
-  and03?: string;
-  and04?: string;
-  and05?: string;
-  and06?: string;
-  not01?: string;
-  not02?: string;
-  not03?: string;
+  and1: string;
+  and2?: string;
+  and3?: string;
+  or1?: string;
+  or2?: string;
+  or3?: string;
+  not1?: string;
+  not2?: string;
+  not3?: string;
   classe: string;
   situacao: string;
 }
@@ -47,6 +48,7 @@ export type PreTableParams = {
   total: number;
   columns: IExcelColumn[];
   dataSource: any[];
+  export: () => void;
 }
 
 export type columnType = {
