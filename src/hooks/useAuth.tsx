@@ -13,6 +13,7 @@ Amplify.configure({
 interface UseAuth {
   isAuthenticated: boolean;
   username: string;
+  mail: string;
   avatar: string;
   signIn: (username: string, password: string) => Promise<Result>;
   signOut: () => void;
@@ -41,13 +42,15 @@ export const useAuth = () => {
 const useProvideAuth = (): UseAuth => {
   const [isAuthenticated, setIsAuthenticated] = useState(false);
   const [username, setUsername] = useState("");
+  const [mail, setMail] = useState("");
   const [avatar, setAvatar] = useState("");
 
   useEffect(() => {
     Auth.currentAuthenticatedUser()
       .then((result) => {
         setUsername(result.username);
-        setAvatar(result.attributes.picture)
+        setMail(result.challengeParam.userAttributes.email)
+        setAvatar(result.challengeParam.userAttributes.picture)
         setIsAuthenticated(true);
       })
       .catch(() => {
@@ -61,12 +64,13 @@ const useProvideAuth = (): UseAuth => {
     try {
       const result = await Auth.signIn(username, password);
       setUsername(result.username);
+      setMail(result.challengeParam.userAttributes.email)
       setIsAuthenticated(true);
       return { success: true, message: "" };
     } catch (error) {
       return {
         success: false,
-        message: "LOGIN FAIL",
+        message: "Erro ao fazer login, contate o Administrador.",
       };
     }
   };
@@ -88,6 +92,7 @@ const useProvideAuth = (): UseAuth => {
   return {
     isAuthenticated,
     username,
+    mail,
     avatar,
     signIn,
     signOut,

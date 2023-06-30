@@ -17,6 +17,11 @@ const Sidebar = () => {
 
     const auth = useAuth()
 
+    const logout = () => {
+        auth.signOut()
+        window.location.href = '/'
+    }
+
     useEffect(() => {
         setTableData([])
         setBlank(true)
@@ -54,7 +59,7 @@ const Sidebar = () => {
               icon={<MdOutlineSearch/>}
               className="sidebar-menu-item"
             >
-              <Link to="/">Busca de Marcas</Link>
+              <Link to="/painel">Busca de Marcas</Link>
             </Menu.Item>
             <Menu.Item
               key="ap"
@@ -73,7 +78,7 @@ const Sidebar = () => {
                     <Button 
                       type='text' 
                       style={{color: 'rgb(255, 255, 255, 0.65)', fontSize: '18px'}}
-                      onClick={() => auth.signOut()}>Sair</Button>
+                      onClick={logout}>Sair</Button>
                 </Menu.Item>
             </Menu>
         </div>

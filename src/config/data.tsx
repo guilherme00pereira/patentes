@@ -65,7 +65,6 @@ export const selectOptions: SelectProps['options'] = [
 ]
 
 
-
 export const selectClassOptions = () => {
   const createSelectClassOptions: SelectProps['options'] = [
     {
@@ -150,7 +149,7 @@ export const followTableColumns: columnType[] = [
 ]
 
 export const exportSelect: Array<object> = [
-  {value: 'pdf', label: '.pdf'},
+  //{value: 'pdf', label: '.pdf'},
   {value: 'xlsx', label: '.xlsx'},
 ]
 

@@ -23,10 +23,8 @@ const ProcessSearch = () => {
       .then((values) => {
         setLoading(true)
         setBlank(false)
-        console.log(values)
         getSearchProcess(values.searchprocess)
           .then((data) => {
-            console.log(data)
             Object.entries(data.body).forEach((item: any, index: number) => {
               tableData.push({
                 id: index.toString(),

@@ -4,23 +4,23 @@ import {useContext} from "react";
 import {FormActionContext} from "../../config/context.tsx";
 import {BrandTableData} from "../../config/types.ts";
 import {getFololowUpProcess} from "../../lib/apiClient.ts";
+import { useAuth } from '../../hooks/useAuth.tsx';
 
 const FollowUpMenu = () => {
 const { setRenderTable, setTableData, setBlank, setRenderResult, setResult, setLoading, showLoadingText } = useContext(FormActionContext)
   const [form] = Form.useForm()
+  const auth = useAuth()
 
   const callApi = () => {
     const tableData: BrandTableData[] = []
     showLoadingText(true)
     form
       .validateFields()
-      .then((values) => {
+      .then(() => {
         setLoading(true)
         setBlank(false)
-        console.log(values)
-        getFololowUpProcess("user@gmail.com")
+        getFololowUpProcess(auth.mail)
           .then((data) => {
-            console.log(data)
             Object.entries(data.body).forEach((item: any, index: number) => {
               tableData.push({
                 id: index.toString(),

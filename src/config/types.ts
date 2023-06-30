@@ -48,7 +48,6 @@ export type PreTableParams = {
   total: number;
   columns: IExcelColumn[];
   dataSource: any[];
-  export: () => void;
 }
 
 export type columnType = {

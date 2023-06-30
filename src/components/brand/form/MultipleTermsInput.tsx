@@ -16,23 +16,6 @@ const MultipleTermsInput = () => {
               />
             </Form.Item>
             <span>OU</span>
-            <Form.Item name="and2">
-              <Input
-                placeholder="Insira o termo de busca"
-                size="large"
-                style={window.screen.width < 1281 ? {width: "120px"} : {width: "180px"}}
-              />
-            </Form.Item>
-          </div>
-          <div className="multiple-terms-box">
-            <Form.Item name="and3">
-              <Input
-                placeholder="Insira o termo de busca"
-                size="large"
-                style={window.screen.width < 1281 ? {width: "120px"} : {width: "180px"}}
-              />
-            </Form.Item>
-            <span>OU</span>
             <Form.Item name="or1">
               <Input
                 placeholder="Insira o termo de busca"
@@ -42,7 +25,24 @@ const MultipleTermsInput = () => {
             </Form.Item>
           </div>
           <div className="multiple-terms-box">
+            <Form.Item name="and2">
+              <Input
+                placeholder="Insira o termo de busca"
+                size="large"
+                style={window.screen.width < 1281 ? {width: "120px"} : {width: "180px"}}
+              />
+            </Form.Item>
+            <span>OU</span>
             <Form.Item name="or2">
+              <Input
+                placeholder="Insira o termo de busca"
+                size="large"
+                style={window.screen.width < 1281 ? {width: "120px"} : {width: "180px"}}
+              />
+            </Form.Item>
+          </div>
+          <div className="multiple-terms-box">
+            <Form.Item name="and3">
               <Input
                 placeholder="Insira o termo de busca"
                 size="large"
