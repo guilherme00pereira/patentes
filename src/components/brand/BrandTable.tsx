@@ -14,19 +14,20 @@ const BrandTable = () => {
       <div className="table-wrapper">
         <PreTable total={tableData.length} columns={brandTableColumns} dataSource={tableData}/>
         <Table pagination={{position: ["bottomCenter"]}} dataSource={tableData} rowKey="id">
-            <Column title="Classe" dataIndex="class"/>
-            <Column title="Processo" dataIndex="process"/>
-            <Column title="Marca" dataIndex="brand"/>
+            <Column title="Processo" dataIndex="process" />
+            <Column title="Marca" dataIndex="brand" />
+            <Column title="Classe" dataIndex="class" />
             <Column title="Apresentação" dataIndex="presentation" render={(presentation) => {
                 return badgeTypes.find(type => type.key === presentation)?.value()
             }}/>
-            <Column title="Situação" dataIndex="situation" render={(situation) => {
+            <Column title="" dataIndex="situation" render={(situation) => {
                 return badgeTypes.find(type => type.key === situation)?.value()
             }}/>
-            <Column title="Nome/Razão Social" dataIndex="name"/>
-            <Column title="Atividades" dataIndex="activities"/>
-            <Column title="País" dataIndex="country"/>
-            <Column title="UF" dataIndex="state"/>
+            <Column title="Situação" dataIndex="situation" />
+            <Column title="Nome/Razão Social" dataIndex="name" />
+            <Column title="Atividades" dataIndex="activities" />
+            <Column title="País" dataIndex="country" />
+            <Column title="UF" dataIndex="state" />
         </Table>
       </div>
   )

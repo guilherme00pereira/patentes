@@ -198,10 +198,10 @@ export const badgeTypes: ITableBadges[] = [
   {key: "Nominativa", value: () => presentationTemplate({value: "N", className: "nominativa"})},
   {key: "Figurativa", value: () => presentationTemplate({value: "F", className: "figurativa"})},
   {key: "Mista", value: () => presentationTemplate({value: "M", className: "mista"})},
-  {key: "Registered", value: () => situationTemplate({value: "Registrado", icon: registeredIcon})},
-  {key: "Expired", value: () => situationTemplate({value: "Extinto/Arquivado", icon: expiredIcon})},
-  {key: "Application withdrawn", value: () => situationTemplate({value: "Extinto/Arquivado", icon: awatingIcon})},
-  {key: "Application refused", value: () => situationTemplate({value: "Extinto/Arquivado", icon: expiredIcon})},
+  {key: "Registered", value: () => situationTemplate({value: "", icon: registeredIcon})},
+  {key: "Expired", value: () => situationTemplate({value: "", icon: expiredIcon})},
+  {key: "Application withdrawn", value: () => situationTemplate({value: "", icon: awatingIcon})},
+  {key: "Application refused", value: () => situationTemplate({value: "", icon: expiredIcon})},
   {
     key: "Application refused/cancelled/withdraw/expired",
     value: () => situationTemplate({value: "Extinto/Arquivado", icon: activeIcon})

@@ -43,7 +43,7 @@ const SearchButton = ({ showText, source }: { showText?: boolean; source: string
                 presentation: item[1].marca_apresentacao,
                 situation: item[1].situacao,
                 name: item[1].titular_nome_razao_social,
-                activities: '',
+                activities: item[1].atividade,
                 country: item[1].titular_pais,
                 state: item[1].titular_uf,
               })
