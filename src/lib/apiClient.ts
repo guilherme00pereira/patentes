@@ -52,15 +52,15 @@ export const getDistanceSearch = async (params: DistanceSearchParams) => {
     return response.data;
 }
 
-export const postIncludeProcess = async (params: any) => {
-    const url = baseUrl.replace('<code>', 'lof8gj8bwk')
-    const response = await axios.post(url, params, {headers: {'Content-Type': 'application/json'}});
+export const postIncludeProcess = async (mail: string, processo: string) => {
+    const url = baseUrl.replace('<code>', 'lof8gj8bwk') + `?usuario=${mail}&processo=${processo}`
+    const response = await axios.get(url, {headers: {'Content-Type': 'application/json'}});
     return response.data;
 }
 
-export const postExcludeProcess = async (params: any) => {
-    const url = baseUrl.replace('<code>', 'exkeir5z25')
-    const response = await axios.post(url, params, {headers: {'Content-Type': 'application/json'}});
+export const postExcludeProcess = async (mail: string, processo: string) => {
+    const url = baseUrl.replace('<code>', 'exkeir5z25') + `?usuario=${mail}&processo=${processo}`
+    const response = await axios.get(url, {headers: {'Content-Type': 'application/json'}});
     return response.data;
 }
 

@@ -1,7 +1,7 @@
 import type {SelectProps} from 'antd'
 import {columnType} from './types'
 import {TabsProps} from "antd";
-import { MdHourglassBottom, MdClose, MdCheck } from 'react-icons/md';
+import { MdHourglassBottom, MdClose } from 'react-icons/md';
 import GeneralSection from "../components/brand/sections/GeneralSection.tsx";
 import RadicalSection from "../components/brand/sections/RadicalSection.tsx";
 import DistanceSection from "../components/brand/sections/DistanceSection.tsx";
@@ -166,7 +166,7 @@ const presentationTemplate = ({value, className}: { value: string, className: st
 
 const situationTemplate = ({value, icon}: { value: string, icon: () => any }) => {
   return (
-    <div style={{display: "flex"}}>{value}{icon()}</div>
+    <div className='situation-template'>{value}{icon()}</div>
   )
 }
 
@@ -187,13 +187,6 @@ const awatingIcon = () => {
     <MdHourglassBottom style={{color: "#FFC107"}} />
   )
 }
-
-const activeIcon = () => {
-  return (
-    <MdCheck style={{color: "#28A745"}} />
-  )
-}
-
 export const badgeTypes: ITableBadges[] = [
   {key: "Nominativa", value: () => presentationTemplate({value: "N", className: "nominativa"})},
   {key: "Figurativa", value: () => presentationTemplate({value: "F", className: "figurativa"})},
@@ -204,12 +197,6 @@ export const badgeTypes: ITableBadges[] = [
   {key: "Application refused", value: () => situationTemplate({value: "", icon: expiredIcon})},
   {
     key: "Application refused/cancelled/withdraw/expired",
-    value: () => situationTemplate({value: "Extinto/Arquivado", icon: activeIcon})
+    value: () => situationTemplate({value: "", icon: expiredIcon})
   },
-
 ]
-
-export const lorem = `
-Lorem ipsum dolor sit amet. 33 minima porro sed necessitatibus dolorem et labore minus. Qui iste maiores est impedit amet ad galisum quis. Eum voluptatem exercitationem eos maiores culpa vel ratione soluta et voluptatem cupiditate ex rerum architecto eos neque aspernatur. Qui mollitia magnam eum eius Quis et corrupti fugiat aut quas quia non corrupti consequatur in dolorem voluptas. Non rerum voluptatum cum expedita odio est officiis sint sit ducimus labore sit soluta corrupti sit vero saepe At sunt galisum. Est nobis repellendus sed neque fugiat sit dolorem earum eum earum voluptatum ab dolorem magni ab repudiandae harum id fuga facere? Eos iure libero ut magni facere aut inventore tenetur non enim obcaecati aut nostrum quas.
-Vel dolores repellendus ut modi perferendis qui corrupti dolorem qui consequatur rerum qui dolorem alias. Et soluta molestias ut officiis numquam est unde dignissimos quo consectetur Quis et nemo similique hic delectus aperiam. Eos excepturi quasi id expedita quas id deserunt cupiditate aut nobis odio?
-`

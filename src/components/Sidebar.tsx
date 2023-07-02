@@ -29,7 +29,7 @@ const Sidebar = () => {
         setResult({success: false, message: ''})
         setLoading(false)
         setRenderTable(false)
-        location.pathname === '/acompanhamento-de-processos' ? setSelectedKey('ap') : setSelectedKey('bm')
+        location.pathname === '/painel/acompanhamento-de-processos' ? setSelectedKey('ap') : setSelectedKey('bm')
     }, [location])
 
   return (

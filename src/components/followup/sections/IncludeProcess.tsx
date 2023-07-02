@@ -4,6 +4,7 @@ import {MdOutlineDeleteForever, MdPlaylistAdd} from 'react-icons/md'
 import {ButtonProps} from 'antd/es/button/button'
 import {FormActionContext} from '../../../config/context'
 import {postIncludeProcess, postExcludeProcess} from "../../../lib/apiClient.ts";
+import {useAuth} from "../../../hooks/useAuth.tsx";
 
 const {Title} = Typography
 
@@ -17,6 +18,7 @@ const IncludeProcess = () => {
   const [isModalOpen, setIsModalOpen] = useState(false)
   const [processNumber, setProcessNumber] = useState('')
   const [form] = Form.useForm()
+  const auth = useAuth()
 
   const showModal = () => {
     showLoadingText(false)
@@ -32,7 +34,7 @@ const IncludeProcess = () => {
     setRenderResult(false)
     setRenderTable(false)
     setLoading(true)
-    postExcludeProcess(processNumber).then((data) => {
+    postExcludeProcess(auth.mail, processNumber).then((data) => {
       console.log(data)
       setTimeout(() => {
         setLoading(false)
@@ -57,7 +59,7 @@ const IncludeProcess = () => {
   const handleIncludeProcess = () => {
     showLoadingText(false)
     form.validateFields().then(() => {
-      postIncludeProcess(processNumber).then((data) => {
+      postIncludeProcess(auth.mail, processNumber).then((data) => {
         console.log(data)
         setRenderResult(false)
         setRenderTable(false)

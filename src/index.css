@@ -219,6 +219,13 @@ label {
 
 .check-success {
     color: #52c41a;
-    font-size: 48px
+    font-size: 48px;
 }
 
+.situation-template {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 25px;
+    height: 25px;
+}
