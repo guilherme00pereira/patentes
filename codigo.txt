@@ -1,3 +1,0 @@
-https://396104363925.signin.aws.amazon.com/console
-login: Guilherme
-senha: Admin123456@

@@ -20,7 +20,7 @@ export const siderTheme = {
   components: {
     Menu: {
       fontSize: 18,
-      colorItemBg: blue,
+      itemBg: blue,
     },
   },
 }

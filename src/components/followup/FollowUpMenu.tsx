@@ -13,6 +13,7 @@ const { setRenderTable, setTableData, setBlank, setRenderResult, setResult, setL
 
   const callApi = () => {
     const tableData: BrandTableData[] = []
+    setRenderResult(false)
     showLoadingText(true)
     form
       .validateFields()
